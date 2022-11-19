@@ -1,5 +1,5 @@
 
-#Pre-Intro
+
 This is my very first all-designed and implemented full-stack project by myself in 2020 fall after a few months of 
 fully committed to learning web development.
 
