@@ -1,3 +1,12 @@
+
+#Pre-Intro
+This is my very first all-designed and implemented full-stack project by myself in 2020 fall after a few months of 
+fully committed to learning web development.
+
+Now, in 2022 fall, I'm trying to fix some very junior things that now I can fully see that have a better 
+solutions of how to implement it and my code have become cleaner, fixing some things here and there. 
+
+
 # Project description
 
 A social media made using the following technologies:  
