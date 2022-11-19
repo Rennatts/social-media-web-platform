@@ -14,7 +14,7 @@ function PostList({posts}) {
     }, [posts])
 
     const filteredData = posts.filter(post => {
-        return post.brand.toLowerCase() && post.productname.toLowerCase() && post.body.toLowerCase().includes(dataFromSearch.toLowerCase());
+        return post.body.toLowerCase().includes(dataFromSearch.toLowerCase());
     });
 
     const onChange = (e) => {

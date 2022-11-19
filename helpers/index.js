@@ -1,17 +1,6 @@
 const { check, validationResult } = require('express-validator');
 
 exports.createPostValidator = (req, res, next) => {
-    req.check("brand", "write a brand").notEmpty();
-    req.check("brand", "brand must be between 4 to 150 characters").isLength({
-        min: 4,
-        max: 150
-    });
-
-    req.check("productname", "write a productname").notEmpty();
-    req.check("productname", "productname must be between 4 to 150 characters").isLength({
-        min: 4,
-        max: 150
-    });
 
     req.check("body", "write a body").notEmpty();
     req.check("body", "body must be between 4 to 2000").isLength({

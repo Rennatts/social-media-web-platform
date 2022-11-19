@@ -94,14 +94,14 @@ export const addPost = (token, userId, post) => {
         axios
         .post(`http://localhost:5050/posts/create/new/${userId}`, post, config)
         .then((res) => {
-            console.log(res);
+            console.log("ssssssssssssss", res);
             dispatch({
                 type: ADD_POST,
                 payload: res.data
             });
             dispatch(getAllPosts(token));
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log("errorrr", err));
     };
 };
 

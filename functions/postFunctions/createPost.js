@@ -2,6 +2,7 @@ const Post = require('./../../schema/post');
 require('dotenv').config();
 
 module.exports =  async(req, res, next) => {
+    console.log("----------", req.body)
 
     const name = new Array;
     for(let i= 0; i < req.files.length; i++){
@@ -31,11 +32,7 @@ module.exports =  async(req, res, next) => {
 
     const post = await Post.create({
         created: Date.now(),
-        brand: req.body.brand,
-        productname: req.body.productname,
-        category: req.body.category,
         body: req.body.body,
-        rating: req.body.rating,
         postedBy: req.profile,
         name: [],
         size: [],

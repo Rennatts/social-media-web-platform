@@ -19,13 +19,10 @@ function Post({ post }) {
     const [like, setLike] = useState(false);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState(false);
-    const [fullproduct, setFullproduct]= useState();
     const[currentImage, setCurrentImage] = useState(0);
     const [length, setLength] = useState();
 
     const history = useHistory();
-
-    console.log(post);
 
 
     const date = new Date(post && post.created);
@@ -87,11 +84,6 @@ function Post({ post }) {
             </div>
 
             <div className="post_box_info">
-                <div className="product_brand">
-                    <h5>Procuct: {post && post.productname}</h5>
-                    <h5>Brand: {post && post.brand}</h5>
-                </div>
-
                 <div className="date_box">
                    <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
                 </div>
