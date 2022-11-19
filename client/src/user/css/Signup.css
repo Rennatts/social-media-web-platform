@@ -1,0 +1,105 @@
+.main_container{
+    font-family: montserrat;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(120deg, #71c4c7, #aef0f2);
+    
+}
+
+.container{
+    margin-bottom: 30px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    width: 40vw;
+
+}
+
+
+
+
+.container h2{
+    text-align: center;
+    padding: 0 0 10px 0;
+
+}
+
+.container form{
+    padding: 0 20px;
+    box-sizing: border-box;
+
+}
+
+.form-group .text-muted{
+    font-size: 20px;
+
+}
+
+.form-group input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    text-decoration: underline;
+    color: black;
+    border-bottom: 2px solid #cccc;
+    margin-bottom: 30px;
+
+}
+
+.form-group input:hover{
+    border-bottom: 2px solid red;
+    
+}
+
+
+
+
+.pass{
+    margin: 0px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.pass:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 50px;
+    background-color: #71c4c7;
+    border: 1px solid #aef0f2;
+    color: white;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #aef0f2;
+    border: 2px solid #71c4c7;
+    color: black;
+    transition: .3s;
+}
+
+.signup_link{
+    padding-top: 20px;
+    margin: 0px 0 20px 5px;
+    color: #666666;
+    cursor: pointer;
+    font-size: 17px;
+    text-align: center;
+}
+
+

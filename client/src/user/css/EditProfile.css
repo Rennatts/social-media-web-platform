@@ -1,0 +1,69 @@
+.editar_perfil_container{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.perfil_container{
+    margin: 50px;
+    padding: 70px;
+    width: 700px;
+    border: 2px solid #ccc;
+
+}
+
+.perfil_container .img-thumbnail{
+    height: 50px;
+    width: 50px;
+}
+
+.edit_profile_form{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+.form-group_profile{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group_profile .edit_profile_img{
+    outline: none;
+    border: none;
+    height: 25px;
+
+}
+
+.form-group_profile .profile_input{
+    outline: none;
+    border: none;
+    text-decoration: underline;
+    color: black;
+    border-bottom: 2px solid #cccc;
+    height: 25px;
+}
+
+.form-group_profile .profile_input:hover{
+    border-bottom: 2px solid red;
+
+}
+
+.form-group_profile textarea{
+    outline: none;
+    border: none;
+    text-decoration: underline;
+    color: black;
+    border: 2px solid #cccc;
+    height: 75px;
+}
+
+
+.edit_profile_form button{
+    margin-top: 10px;
+}
+
+
+

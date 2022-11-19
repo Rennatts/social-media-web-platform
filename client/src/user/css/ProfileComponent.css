@@ -1,0 +1,11 @@
+
+.img-fluid{
+    height: 80px;
+    width: 80px;
+    border-radius: 60px;
+};
+
+.post-by2 {
+    justify-content: center;
+    align-items: center;
+}

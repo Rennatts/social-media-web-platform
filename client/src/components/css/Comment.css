@@ -1,0 +1,45 @@
+
+.main_comments_container{
+    border: 0.5px solid rgb(219, 217, 217);
+    background-color: #f2f5f8;
+    margin-left: -25px;
+    padding-bottom: 13px;
+    margin-top: 3px;
+
+}
+
+.comment_basicinfo{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.comment_basicinfo{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 7px 0;
+    
+    
+}
+
+.img_profile_comment{
+    border-radius: 70px;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px 
+}
+
+.name_comment,
+.date_comment{
+    margin-left: 10px;
+}
+
+.col-12{
+    margin-top: -20px;
+}
+
+.date_comment{
+    padding-top: 8px;
+    font-size: 12px;
+}

@@ -1,0 +1,43 @@
+import React, {useEffect} from 'react';
+import RankingComponent from './../components/RankingComponent';
+import {getMostCommentedPosts} from './../redux/actions/postActions';
+import { useDispatch, connect } from 'react-redux'; 
+import { isLogged } from './../auth/index';
+import RankingPost from './../components/RankingPost';
+
+
+function MostCommentedPosts({onChange, dataFromSearch, posts}) {
+
+    const dispatch = useDispatch();
+    const jwt = isLogged();
+
+    useEffect(()=> {
+        function getMostLiked(){
+            dispatch(getMostCommentedPosts(jwt.token));
+        }
+
+        getMostLiked();
+    },[dispatch]);
+
+    return (
+        <div>
+            <RankingComponent onChange={onChange} dataFromSearch={dataFromSearch}></RankingComponent>
+
+            <div className="post_container_ranking">
+                {posts.map((item, i) => {
+                    return <RankingPost post={item} key={item._id}></RankingPost>
+                })}
+            </div>
+
+        </div>
+    )
+}
+
+const mapStateToProps = ({ post: {posts} }) => ({
+    posts
+})
+
+
+
+
+export default connect(mapStateToProps, null)(MostCommentedPosts);

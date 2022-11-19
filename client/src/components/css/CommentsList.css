@@ -1,0 +1,34 @@
+
+.comments{
+    position: relative;
+    right: 0;
+    left: 25px;
+    width: 875px;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.close-btn{
+    height: 30px;
+    width: 180px;
+    border: none;
+}
+
+.comments_buttons{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 12px;
+}
+
+.comments_buttons button{
+    margin-left: 10px;
+    background-color: #f2f5f8;
+}
+
+.comments_buttons button:hover{
+    background-color: #a2aac5;
+}
+
+
+

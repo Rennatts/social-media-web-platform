@@ -1,0 +1,270 @@
+.post_container_profile{
+    margin-top: 10px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.post_box_profile{
+    border-style: groove;
+    border: 1px solid #b0b2b3;
+    border-radius: 17px;
+    background: white;
+    color: black;
+    width: 350px;
+    height: 480px;
+    padding: 30px 0;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    margin: 20px;
+
+
+}
+
+.user_profile_box_profile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    margin-top: -20px;
+    
+}
+
+.user_profile_box_profile h5{
+    font-size: 20px;
+
+}
+
+.user_profile_box_profile h8{
+    font-size: 16px;
+    margin-left: 18px;
+}
+
+.user_profile_box_profile img{
+    height: 80px;
+    width: 90px;
+    margin-right: 42px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
+.slider_profile #image_profile{
+    width: 348px;
+    height: 250px;
+
+}
+
+.body_box_profile{
+    padding: 10px 20px;
+    height: 20px;
+}
+
+.post_box_info_profile{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    padding: 10px 0;
+}
+
+.product_brand_profile{
+    margin-left: 15px;
+    margin-top: -16px;
+}
+
+.date_box_profile{
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.post_box_info_profile h5{
+    font-size: 16px;
+    margin-top: 2px;
+}
+
+.date_profile{
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.post_box_profile{
+    margin-top: 5px;
+
+}
+
+.username_profile{
+    font-weight: bold;
+
+}
+
+
+
+.post_box_profile .slider_profile{
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -120px 0;
+}
+
+.slider #image{
+    display: flex;
+    width: 900px;
+    height: 500px;
+
+}
+
+
+.right_arrow_profile{
+    background: #cbced4;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3rem;
+    opacity: 0.25;
+    position: absolute;
+    top: 53%;
+    right: 1%;
+    transition: opacity 0.35s;
+    width: 3rem;
+    z-index: 1;
+
+}
+
+.left_arrow_profile{
+    background: #cbced4;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 3rem;
+    opacity: 0.25;
+    position: absolute;
+    left: 1%;
+    top: 53%;
+    transition: opacity 0.25s;
+    width: 3rem;
+    z-index: 1;
+
+
+}
+
+
+.right_arrow_profile:hover,
+.left_arrow_profile:hover{
+    background: white;
+    color: black;
+
+}
+
+
+.right_arrow_profile:active,
+.left_arrow_profile:active{
+    background: black;
+    color: black;
+    transition: .10s;
+}
+
+
+
+
+.btn_img_profile{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+.btn_img_profile:hover{
+    background-color: black;
+}
+
+
+.bottom_box_profile{
+    display: flex;
+    justify-content: center;
+    height: 80px;
+
+}
+
+.comments_box_profile{
+    margin-top: -15px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.likes_box_profile{
+    margin-top: -20px;
+    margin-left: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments_link_profile{
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    margin-left: 10px;
+    
+}
+
+.badge_profile{
+    padding-top: 50px;
+}
+
+.comment_icon_profile{
+    color: #909696;
+    font-size: 25px;
+}
+
+.comment_icon_profile:active{
+    color: #565959;
+}
+
+
+.mr-2_profile{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+
+.fa-heart_profile{
+    margin-top: -5px;
+    color: red;
+}
+
+.fa-heart_profile:active{
+    color: #91030a;
+}
+
+
+@media(max-width: 375px){
+    .post_box_profile{
+        width: 290px;
+        margin-left: 3px;
+
+    }
+
+}

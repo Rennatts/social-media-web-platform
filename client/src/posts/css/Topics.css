@@ -1,0 +1,89 @@
+.ranking_container{
+    background: #e6e9ed;
+}
+
+.header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+
+
+}
+
+.btn_most_liked,
+.btn_most_commented,
+.search_input{
+    height: 33px;
+    width: 190px;
+    border: 2px solid #dddd;
+    cursor: pointer;
+    text-decoration:none;
+    text-transform: uppercase;
+    transition: .3s;
+    box-shadow: 6px 7px 8px 1px rgb(142, 168, 142);
+    border-radius: 18px;
+    font-size: 12px;
+    background: linear-gradient(to right, #528e91, #9bd6d8 140%);
+    border: none;
+    color: white;
+    
+
+}
+
+.search_input{
+    padding-left: 17px;
+
+}
+
+
+
+.ranking_posts_container{
+    padding: 0 5px 0 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #e6e9ed;
+
+}
+
+
+.card_one{
+    margin-top: 30px;
+
+
+
+}
+
+.link{
+    text-decoration: none;
+}
+
+.card-two{
+    padding-top: 20px;
+    margin-top: 60px;
+    padding-bottom: 40px;
+    box-shadow: 6px 7px 8px 1px rgb(142, 168, 142);
+    border-radius: 18px;
+    background: white;
+}
+
+
+
+
+.post_main_info p{
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 150px;
+
+}
+
+
+.user_profile_box img{
+    margin-top: 10px;
+}
+
+.ranking_post_info{
+    margin: 20px;
+}

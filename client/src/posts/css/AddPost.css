@@ -1,0 +1,103 @@
+.addpost_container{
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    height: 92.8vh;
+    flex-direction: column;
+}
+
+.addpost{
+    flex-direction: column;
+    background: white;
+    padding: 60px;
+    margin-top: 60px;
+   
+}
+
+.addpost_container h2{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+.form-group_addpost{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    padding: 23px 0;
+}
+
+.form-group_addpost input{
+    margin-bottom: -15px;
+    width: 100%;
+    border: none;
+    
+}
+
+.form-group_addpost textarea{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #71c4c7;
+
+}
+
+.form-group_addpost textarea:hover{
+    border: none;
+    border-bottom: 2px solid #f11616;
+
+}
+
+.form-group_addpost label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
+    text-transform: uppercase;
+
+}
+
+
+.addpost button{
+    margin-top: 30px;
+}
+
+.stars_reviews{
+    display: relative;
+    margin-left: 380px;
+    height: 40px;
+    margin-top: 13px;
+
+}
+
+
+.reviews{
+    width: 115px;
+    margin: 10px 0;
+    display: flex;
+
+}
+
+.reviews input{
+    display: none;
+}
+
+.reviews label{
+    color: #999;
+    margin: 5px 0;
+    padding-right: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+.reviews input:not(:checked) ~ label:hover,
+.reviews input:not(:checked) ~ label:hover ~ label{
+    color: crimson;
+}
+
+.reviews input:checked ~ label{
+   color: crimson; 
+}

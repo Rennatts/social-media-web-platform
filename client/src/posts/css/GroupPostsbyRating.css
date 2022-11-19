@@ -1,0 +1,36 @@
+.general_ranking_maincontainer{
+    height: 100%;
+    min-height: 93vh;
+    background: linear-gradient(120deg, #71c4c7, #aef0f2);
+    padding: 15px;
+
+}
+
+.general_ranking_container{
+    background-color: rgb(255, 248, 248);
+    margin: 5px 300px;
+    padding: 50px 0;
+}
+
+.general_ranking_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.ranking_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
+    margin: 5px 0;
+    height: 80px;
+}
+
+.product_info_container h5{
+    font-size: 18px;
+}
+
+
+
