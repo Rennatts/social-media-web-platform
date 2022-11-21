@@ -31,14 +31,13 @@ npm install
 ```
 # How to run
 
-in the root of the project run 
+in the root of the project run the followig command line,
+it will run the back and front simultaneously
 
-1- Run the server
 
 ```
 npm run dev
 ```
 
-#It will run the back and front simultaneously
 
 
