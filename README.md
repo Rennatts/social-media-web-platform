@@ -24,12 +24,20 @@ A social media made using the following technologies:
 # install node modules in the back and front
 use node version 16 or previous version
 
-install node modules in the back and in the front-end inside de client folder
-npm install
+install node modules in the back and in the front-end, inside de client folder
 
+```
+npm install
+```
 # How to run
 
-in the root of the project run 'npm run dev'
+in the root of the project run 
+
+1- Run the server
+
+```
+npm run dev
+```
 
 #It will run the back and front simultaneously
 
