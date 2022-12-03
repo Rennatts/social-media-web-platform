@@ -88,7 +88,7 @@ function ProfilePosts({ post }) {
 
             <ImageSliderProfile image={post.url}></ImageSliderProfile>
 
-            <div className="">  
+            <div className="teste">  
                 <Link className="comments_link_profile">
                     <div className="comments_box_profile">
                         <FontAwesomeIcon className="comment_icon_profile" icon={faComment} size = '2x'></FontAwesomeIcon>

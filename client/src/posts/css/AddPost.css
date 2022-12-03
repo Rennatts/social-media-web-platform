@@ -1,5 +1,4 @@
 .addpost_container{
-    background: #ccc;
     display: flex;
     align-items: center;
     height: 92.8vh;
@@ -14,6 +13,11 @@
    
 }
 
+.addpost form{
+    border: 2px solid #9999C3;
+    padding: 100px;
+}
+
 .addpost_container h2{
     margin-bottom: 20px;
     display: flex;
@@ -26,7 +30,8 @@
 .form-group_addpost{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     width: 900px;
     padding: 23px 0;
 }
@@ -40,23 +45,30 @@
 
 .form-group_addpost textarea{
     width: 100%;
+    height: 100%;
     border: none;
-    border-bottom: 2px solid #71c4c7;
-
+    border: 2px solid #9999C3;
 }
+
+
+.form-group_addpost textarea[type=text] {
+    width: 100%;
+    padding: 30px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* .form-group_addpost textarea:focus{
+    border: 2px solid #7B8CDE;
+    outline: none !important;
+} */
+
+
 
 .form-group_addpost textarea:hover{
     border: none;
     border-bottom: 2px solid #f11616;
-
-}
-
-.form-group_addpost label{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 200px;
-    text-transform: uppercase;
 
 }
 

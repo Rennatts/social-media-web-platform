@@ -77,8 +77,6 @@ function AddPost(){
 
         post.body && postData.append("body", post.body);
 
-        console.log("ooooooo",  post);
-
         for(let i= 0; i < post.file.length; i++) {
             post.file[i] && postData.append('file', post.file[i])
         };
@@ -100,14 +98,13 @@ function AddPost(){
 
                 <form onSubmit={handleFormSubmit} enctype="multipart/form-data">
                     <div className="form-group_addpost">
-                        <label className="text-muted">Add images</label>
+                        <label className="text-muted">Choose images</label>
                         <input 
                         onChange={handlefileChange} 
                         type="file" 
                         multiple
                         accept= "image/*"
-                        name="file"
-                        className="form-control">
+                        name="file">
                         </input>
                     </div>
                     
@@ -119,7 +116,6 @@ function AddPost(){
                         type="text" 
                         required
                         value={post.body}
-                        className="form-control"
                         ></textarea>
                     </div>
 

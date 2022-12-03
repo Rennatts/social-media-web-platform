@@ -150,7 +150,7 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                             <div className='main'>
                                 <div className='image'>
                                     <div className='hover'>
-                                        <img className="profile_image"
+                                        <img
                                             className='img-thumbnail'
                                             src={user && user.url}  
                                             alt= {user && user.name}
