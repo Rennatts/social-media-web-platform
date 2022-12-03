@@ -5,6 +5,7 @@ import { isLogged } from './../auth';
 import './Home.css';
 import { signin } from './../redux/actions/userActions';
 import { Link } from 'react-router-dom';
+import AllPosts from './../posts/AllPosts';
 
 import {
     TOGGLE_SUCCESS
@@ -64,7 +65,7 @@ function Home({ userError, userSuccess }) {
 
     return (
         <>
-            {!isAuthenticated() ? (<Signin/>) : ("hello to my world")}
+            {!isAuthenticated() ? (<Signin/>) : (<AllPosts/>)}
             {/* <div className='img_container'>
                 <img src={LoginLogo} alt="login_logo"></img>
             </div>

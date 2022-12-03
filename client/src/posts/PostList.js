@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { isLogged } from './../auth/index';
 import Post from './../components/Post';
 import SearchIcon from "@material-ui/icons/Search";
+import './css/PostList.css';
 
 function PostList({posts}) {
 
@@ -24,13 +25,13 @@ function PostList({posts}) {
 
     return (
         <div>
-            <form className="search-topic-wrapper">
-                <SearchIcon className="header__searchIcon"></SearchIcon> 
-                <input
-                className="search_input"
+            <form className="search_posts">
+                <SearchIcon className="search_icon_posts"></SearchIcon> 
+                <input className="search_input_posts"
                     placeholder="Search..."
                     value={dataFromSearch}
                     onChange={onChange}
+                    type="search"
                 />
             </form>
             

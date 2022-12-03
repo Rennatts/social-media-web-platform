@@ -23,7 +23,7 @@ const Menu = ({ currentUser }) => {
                     exact to={"/"}
                     activeStyle={{
                         fontWeight: "bold",
-                        color: "#a4f5e5",
+                        color: "#7B8CDE",
 
                     }}
                     className="nav_link_active" 
@@ -32,33 +32,24 @@ const Menu = ({ currentUser }) => {
                     </NavLink>
 
                     <NavLink 
-                        exact exact to="/allusers" 
+                        exact to={"/allusers"}
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5"
+                            color: "#7B8CDE"
                         }}
                         className="nav_link_active" 
-                        href="#"><i className="fas fa-users"></i>Users
+                        href="#"><i className="fas fa-users"></i>
                     </NavLink>
 
                     <NavLink exact to={`/posts/feed/${isAuthenticated().user._id}`}  
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5"
+                            color: "#7B8CDE"
                         }}
-                        href="#"><i className="fas fa-mail-bulk"></i>
+                        href="#">
                         Feed
                     </NavLink>  
-                    <NavLink 
-                        exact to={`/posts/allposts`}  
-                        className="nav_link_active"
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#a4f5e5"
-                        }}
-                        href="#"><i className="fas fa-photo-video"></i>Posts
-                    </NavLink> 
                 </div>
 
                 <div className='right_nav'>
@@ -66,7 +57,7 @@ const Menu = ({ currentUser }) => {
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5"
+                            color: "#7B8CDE"
                         }}
                         href="#"><i className="far fa-plus-square"></i>
                     </NavLink> 
@@ -74,7 +65,7 @@ const Menu = ({ currentUser }) => {
                     <NavLink to="/notifications" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5"
+                            color: "#7B8CDE"
                         }}
                         href="#"><i className="far fa-bell"></i>
                     </NavLink> 
@@ -82,7 +73,7 @@ const Menu = ({ currentUser }) => {
                     <NavLink to="/notifications/" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5"
+                            color: "#7B8CDE"
                         }}
                         href="#"><i className="fas fa-folder-plus"></i>
                     </NavLink> 
@@ -91,20 +82,20 @@ const Menu = ({ currentUser }) => {
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5"
+                            color: "#7B8CDE"
                         }}
                         href="#">
-                        {`${isAuthenticated().user.name}´s profile`} 
+                        My profile
                     </NavLink> 
 
                     <NavLink to={"/#"}
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5"
+                            color: "#7B8CDE"
                         }}
                         className="nav_link_active" 
                         onClick={()=> signout(()=> history.push('/'))}>
-                            <i className="fas fa-sign-out-alt"></i>
+                            Logout
                     </NavLink>
                 </div>
                 </>

@@ -6,8 +6,6 @@
 
 
 .img_container{
-    /* background-image: url('./../images//login.svg');
-    background-size: 120px; */
     width: 700px;
     height: 100%;
 }
@@ -43,14 +41,14 @@
     border-radius: 8px;
 }
 
-.form-group input[type=text] {
+.search_posts input[type=text] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
-.form-group input:focus{
+.search_posts input:focus{
     border: 2px solid #7B8CDE;
     outline: none !important;
 }

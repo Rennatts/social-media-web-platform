@@ -1,6 +1,5 @@
 .main_nav{
     position: sticky;
-    background-color: #495274;
     opacity: 0.8;
     width: 100%;
     top: 0px;
@@ -67,9 +66,14 @@
 }
 
 .nav_link_active{
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 18px;
+}
+
+.nav_link_active::hover{
+    background-color: #7B8CDE;
+    font-size: 22px;
 }
 
 .main_nav i{

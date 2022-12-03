@@ -1,0 +1,38 @@
+.search_posts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search_input_posts{
+    height: 40px;
+    width: 400px;
+    border: 2px solid pink;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+}
+
+.search_posts input{
+    height: 40px;
+    width: 400px;
+    border: 2px solid #dddd;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+}
+
+.search_posts input[type=search] {
+    border-button: 2px solid #7B8CDE;
+}
+
+
+.search_icon_posts{
+    display: flex;
+    color: #979998;
+    width: 100px;
+}
+
+

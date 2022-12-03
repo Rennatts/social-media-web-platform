@@ -25,11 +25,8 @@
     box-shadow: 6px 7px 8px 1px rgb(142, 168, 142);
     border-radius: 18px;
     font-size: 12px;
-    background: linear-gradient(to right, #528e91, #9bd6d8 140%);
     border: none;
     color: white;
-    
-
 }
 
 .search_input{
