@@ -65,6 +65,8 @@ function Signup ({ userError, userSuccess }) {
         <div className='main_intro'>
             <div className='intro'>
                 <h1>Welcome to social media</h1> 
+                <p>The best place to make new friends</p>
+                <p>Get to know about what is going on in the web</p>
             </div>   
             <div className="container">
 

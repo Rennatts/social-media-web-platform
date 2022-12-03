@@ -1,7 +1,6 @@
 .container {
     display: flex;
     flex-direction: row;
-    background-color: pink;
 }
 
 
@@ -89,5 +88,6 @@
 .intro{
     display: flex;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    flex-direction: column
 }
