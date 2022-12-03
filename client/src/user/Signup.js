@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Redirect} from 'react-router-dom';
 import { useDispatch, connect } from 'react-redux';
 import { signup } from './../redux/actions/userActions';
-import './Signup.css';
+import './css/Signup.css';
 
 import {
     TOGGLE_SUCCESS

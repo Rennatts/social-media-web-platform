@@ -3,24 +3,24 @@
     margin: 0;
     display: flex;
     justify-content: center;
+    
 
 }
 
 
+
 .post_box_profile{
     border-style: groove;
-    border: 1px solid #b0b2b3;
+    border-color: #71c4c7;
     border-radius: 17px;
-    background: white;
     color: black;
     width: 350px;
-    height: 480px;
+    height: 700px;
     padding: 30px 0;
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: 35px;
     margin: 20px;
-
-
+    background-color: pink;
 }
 
 .user_profile_box_profile{
@@ -28,7 +28,9 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    margin-top: -20px;
+    margin-left: 20px;
+    margin-top: -10px;
+    
     
 }
 
@@ -39,20 +41,19 @@
 
 .user_profile_box_profile h8{
     font-size: 16px;
-    margin-left: 18px;
+    margin-left: 22px;
 }
 
 .user_profile_box_profile img{
     height: 80px;
-    width: 90px;
-    margin-right: 42px;
+    width: 120px;
+    margin-right: 22px;
     border-radius: 50%;
-    margin-bottom: 10px;
-    margin-left: 15px;
 }
 
 .slider_profile #image_profile{
     width: 348px;
+    display: flex;
     height: 250px;
 
 }
@@ -67,26 +68,26 @@
     justify-content: space-between;
     height: 80px;
     padding: 10px 0;
+
 }
 
 .product_brand_profile{
-    margin-left: 15px;
+    margin-left: 25px;
     margin-top: -16px;
 }
 
 .date_box_profile{
-    margin-right: 20px;
-    margin-top: 10px;
-    font-size: 12px;
+    margin-right: 25px;
+    margin-top: 20px;
 }
 
 .post_box_info_profile h5{
     font-size: 16px;
-    margin-top: 2px;
+
 }
 
 .date_profile{
-    margin-top: -10px;
+    margin-top: -20px;
     margin-bottom: 20px;
 }
 
@@ -201,42 +202,30 @@
 .bottom_box_profile{
     display: flex;
     justify-content: center;
+    margin-top: 13px;
     height: 80px;
 
 }
 
-.comments_box_profile{
-    margin-top: -15px;
-    margin-right: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
+.comments_box_profile,
 .likes_box_profile{
-    margin-top: -20px;
-    margin-left: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 500px;
 }
+
 
 .comments_link_profile{
     text-decoration: none;
     color: black;
-    font-size: 30px;
+    font-size: 12px;
     margin-left: 10px;
     
 }
 
-.badge_profile{
-    padding-top: 50px;
-}
-
 .comment_icon_profile{
     color: #909696;
-    font-size: 25px;
 }
 
 .comment_icon_profile:active{
@@ -245,18 +234,31 @@
 
 
 .mr-2_profile{
-    font-size: 13px;
-    margin-left: 10px;
+    font-size: 17px;
+    margin-top: -2px;
+    padding-top: -20px;
+
+}
+
+.mr-2_profile .badge_profile{
+    padding-left: 20px;
+    
+}
+
+.likes_box_profile .badge_profile{
+    padding-top: 20px;
+
 }
 
 
 .fa-heart_profile{
-    margin-top: -5px;
     color: red;
 }
 
 .fa-heart_profile:active{
     color: #91030a;
+
+
 }
 
 

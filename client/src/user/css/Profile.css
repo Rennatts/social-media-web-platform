@@ -55,26 +55,30 @@
 
 
 .edit_icon{
-    position: absolute;
-    top: 55px;
-    left: 300px;
-    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.4rem;
+    opacity: 0.85;
     cursor: pointer;
-    z-index: 100;
+    transition: .3s;
+    z-index: 3;
     color: white;
-
+    margin-left: 25%;
+    margin-top: 3%;
 }
 
 
 .delete_icon{
-    position: absolute;
-    top: 105px;
-    left: 300px;
-    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.4rem;
+    opacity: 0.85;
     cursor: pointer;
-    z-index: 100;
+    transition: .3s;
+    z-index: 3;
     color: white;
-
+    margin-left: 25%;
+    margin-top: 2%;
 }
 
 
@@ -218,7 +222,7 @@
 }
 
 .left{
-    margin-top: 300px;
+    margin-top: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -235,14 +239,6 @@
 
 }
 
-.left_user{
-    margin-top: 300px;
-    display: flex;
-    justify-content: center;
-    max-height: 200px;
-
-}
-
 .left_user h3{
     display: flex;
     justify-content: center;
@@ -252,7 +248,13 @@
 
 
 
+.left_user{
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    max-height: 300px;
 
+}
 
 .about_container{
     display: flex;
@@ -410,7 +412,9 @@
 
 .profile_posts{
     flex-direction: row;
+    flex-wrap: wrap;
     padding-top: -30px;
+    background: #efefef;
     margin-top: -200px;
     width: 1200px;
     border-radius: 20px;
@@ -422,8 +426,6 @@
     display: flex;
     flex-direction: row;
     padding: 13px;
-    flex-wrap: wrap;
-    background: #efefef;
 }
 
 
