@@ -19,20 +19,20 @@ const Menu = ({ currentUser }) => {
             {isAuthenticated() && (
                 <>
                 <div className='nav'>
-                    {/* <NavLink
+                    <NavLink
+                    exact to={"/"}
                     activeStyle={{
                         fontWeight: "bold",
                         color: "#a4f5e5",
 
                     }}
                     className="nav_link_active" 
-                    href="#"
                     >
                         <i className="fas fa-home"></i>
-                    </NavLink> */}
+                    </NavLink>
 
                     <NavLink 
-                        exact to="/allusers" 
+                        exact exact to="/allusers" 
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
@@ -71,21 +71,21 @@ const Menu = ({ currentUser }) => {
                         href="#"><i className="far fa-plus-square"></i>
                     </NavLink> 
 
-                    {/* <NavLink to="/notifications" className="nav_link_active"
+                    <NavLink to="/notifications" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
                         }}
                         href="#"><i className="far fa-bell"></i>
-                    </NavLink>  */}
+                    </NavLink> 
 
-                    {/* <NavLink to="/notifications/" className="nav_link_active"
+                    <NavLink to="/notifications/" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
                         }}
                         href="#"><i className="fas fa-folder-plus"></i>
-                    </NavLink>  */}
+                    </NavLink> 
 
                     <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
                         className="nav_link_active"
