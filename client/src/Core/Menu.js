@@ -11,100 +11,83 @@ const Menu = ({ currentUser }) => {
 
     return (
         <div className="main_nav">
-                <button class="menu-toggler active">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div className="nav">
+            {!isAuthenticated() && (
+                <> 
+                </>
+            )}   
+            
+            {isAuthenticated() && (
+                <>
+                <div className='nav'>
+                    {/* <NavLink
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "#a4f5e5",
+
+                    }}
+                    className="nav_link_active" 
+                    href="#"
+                    >
+                        <i className="fas fa-home"></i>
+                    </NavLink> */}
+
                     <NavLink 
-                        exact to="/" 
+                        exact to="/allusers" 
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#a4f5e5",
-
+                            color: "#a4f5e5"
                         }}
                         className="nav_link_active" 
-                        href="#"><i class="fas fa-home"></i>
+                        href="#"><i className="fas fa-users"></i>Users
                     </NavLink>
 
-                    <NavLink to={`/rankings`}  
+                    <NavLink exact to={`/posts/feed/${isAuthenticated().user._id}`}  
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
                         }}
-                        href="#"><i class="fas fa-medal"></i>Rankings
-                    </NavLink>  
-
-                    {isAuthenticated().user && (
-                    <>
-                        <NavLink 
-                            exact to="/allusers" 
-                            activeStyle={{
-                                fontWeight: "bold",
-                                color: "#a4f5e5"
-                            }}
-                            className="nav_link_active" 
-                            href="#"><i class="fas fa-users"></i>Users
-                        </NavLink>
-
-                        
-                        <NavLink to={`/posts/feed/${isAuthenticated().user._id}`}  
-                        className="nav_link_active"
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#a4f5e5"
-                        }}
-                        href="#"><i class="fas fa-mail-bulk"></i>
+                        href="#"><i className="fas fa-mail-bulk"></i>
                         Feed
-                        </NavLink>  
-                                            
-                        <NavLink 
+                    </NavLink>  
+                    <NavLink 
                         exact to={`/posts/allposts`}  
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
                         }}
-                        href="#"><i class="fas fa-photo-video"></i>Posts
-                        </NavLink>  
-                        
-                    </> 
-                    )}
-
+                        href="#"><i className="fas fa-photo-video"></i>Posts
+                    </NavLink> 
                 </div>
 
-                <div className="right_nav">
-                {isAuthenticated().user && (
-                    <> 
-
-                        <NavLink to={`/post/create`}  
-                            className="nav_link_active"
-                            activeStyle={{
-                                fontWeight: "bold",
-                                color: "#a4f5e5"
-                            }}
-                            href="#"><i class="far fa-plus-square"></i>
-                        </NavLink> 
-
-                        <NavLink to="/notifications/" className="nav_link_active"
+                <div className='right_nav'>
+                    <NavLink exact to={`/post/create`}  
+                        className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
                         }}
-                        href="#"><i class="far fa-bell"></i>
-                        </NavLink> 
+                        href="#"><i className="far fa-plus-square"></i>
+                    </NavLink> 
 
-                        <NavLink to="/notifications/" className="nav_link_active"
+                    {/* <NavLink to="/notifications" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
                         }}
-                        href="#"><i class="fas fa-folder-plus"></i>
-                        </NavLink> 
+                        href="#"><i className="far fa-bell"></i>
+                    </NavLink>  */}
 
-                        <NavLink to={`/user/${isAuthenticated().user._id}`}  
+                    {/* <NavLink to="/notifications/" className="nav_link_active"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "#a4f5e5"
+                        }}
+                        href="#"><i className="fas fa-folder-plus"></i>
+                    </NavLink>  */}
+
+                    <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
@@ -112,45 +95,21 @@ const Menu = ({ currentUser }) => {
                         }}
                         href="#">
                         {`${isAuthenticated().user.name}´s profile`} 
-                        </NavLink>  
+                    </NavLink> 
 
-                        <Link
+                    <NavLink to={"/#"}
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#a4f5e5"
                         }}
                         className="nav_link_active" 
                         onClick={()=> signout(()=> history.push('/'))}>
-                            <i class="fas fa-sign-out-alt"></i>
-                        </Link>
-                                
-                    </> 
-                    )}
+                            <i className="fas fa-sign-out-alt"></i>
+                    </NavLink>
                 </div>
-                    
-                <div className="auth_nav">
-                    {!isAuthenticated() && (
-                        <> 
-                            <NavLink 
-                            exact to={"/signin"}
-                            activeStyle={{
-                                fontWeight: "bold",
-                                color: "#a4f5e5"
-                            }}
-                            className="nav_link_active" 
-                            href="#"><i class="fas fa-sign-in-alt"></i>Sign In</NavLink> 
-                                
-                            <NavLink 
-                            exact to={"/signup"} 
-                            activeStyle={{
-                                fontWeight: "bold",
-                                color: "#a4f5e5"
-                            }}
-                            className="nav_link_active" 
-                            href="#"><i class="fas fa-user-plus"></i>Sign Up</NavLink>
-                        </>
-                    )}
-                </div>            
+                </>
+
+            )}  
         </div>
     )
 }

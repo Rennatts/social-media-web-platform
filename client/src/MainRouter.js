@@ -36,11 +36,11 @@ function MainRouter({ currentUser }){
                     <PrivateRoute exact path="/user/edit/:userId" component={EditProfile}></PrivateRoute> 
                     <PrivateRoute exact path="/post/create" component={AddPost}></PrivateRoute> 
                     <Route exact path="/posts/allposts" component={AllPosts}></Route>
-                    <Route exact path="/rankings" component={Topics}/>    
+                    <Route exact path="/trading" component={Topics}/>    
                     <Route exact path="/post/:postId" component={SinglePost}></Route>
                     <PrivateRoute exact path="/comments" component={Comments}></PrivateRoute>
-                    <Route exact path="/rankings/most_liked" component={MostLikedPosts}></Route>
-                    <Route exact path="/rankings/most_commented" component={MostCommentedPosts}></Route>
+                    <Route exact path="/trading/most_liked" component={MostLikedPosts}></Route>
+                    <Route exact path="/trading/most_commented" component={MostCommentedPosts}></Route>
                     <PrivateRoute exact path="/posts/feed/:userId" component={Feed}></PrivateRoute>
                     <PrivateRoute exact path="/post/edit_post/:postId" component={EditPost}></PrivateRoute>
                     <Route exact path="/comments" component={CommentsList}></Route>

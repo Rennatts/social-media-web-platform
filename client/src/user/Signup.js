@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import {Redirect} from 'react-router-dom';
 import { useDispatch, connect } from 'react-redux';
 import { signup } from './../redux/actions/userActions';
-import './css/Signup.css';
+import './Signup.css';
 
 import {
     TOGGLE_SUCCESS
 } from '../redux/types/userTypes';
 
-
+import LoginLogo from './../images/login.svg';
 
 
 function Signup ({ userError, userSuccess }) {
@@ -39,7 +39,7 @@ function Signup ({ userError, userSuccess }) {
 
 
     function redirectUser(){
-        return success && <Redirect to="/signin"></Redirect>
+        return success && <Redirect to="/home"></Redirect>
 
     };
 
@@ -63,26 +63,26 @@ function Signup ({ userError, userSuccess }) {
 
 
     return (
-        <div className="main_container">
-            <div className="container">
-                <h2 className="mt-5 mb-5">Sign Up</h2>
+        <div className="container">
 
-                {showError()}
+            {showError()}
 
-                {redirectUser()}
-
-                <form>
+            {redirectUser()}
+            <div className='img_container'>
+                <img src={LoginLogo} alt="login_logo"></img>
+            </div>
+            <div className='form_container'>
+                <form className='form'> 
                     <div className="form-group">
-                        <label className="text-muted">Name</label>
-                        <input 
-                        onChange={(event)=> handleInputChange(event)} 
-                        type="text" 
-                        name="name"
-                        required
-                        className="form-control"
-                        value={name}></input>
+                            <label className="text-muted">Name</label>
+                            <input 
+                            onChange={(event)=> handleInputChange(event)} 
+                            type="name" 
+                            name= "name"
+                            required
+                            className="form-control"
+                            value={name}></input>
                     </div>
-
                     <div className="form-group">
                         <label className="text-muted">Email</label>
                         <input 
@@ -95,7 +95,7 @@ function Signup ({ userError, userSuccess }) {
                     </div>
 
                     <div className="form-group">
-                    <label className="text-muted">Password</label>
+                        <label className="text-muted">Password</label>
                         <input 
                         onChange={(event)=> handleInputChange(event)} 
                         type="password" 
@@ -106,10 +106,9 @@ function Signup ({ userError, userSuccess }) {
                     </div>
 
                     <button onClick={handleFormSubmit} className="btn">Submit</button>
-                    
                 </form>
-                
             </div>
+            
         </div>
         
     )

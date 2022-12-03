@@ -6,6 +6,8 @@
 
 
 .img_container{
+    /* background-image: url('./../images//login.svg');
+    background-size: 120px; */
     width: 700px;
     height: 100%;
 }
@@ -70,6 +72,11 @@
     background-color: #7B8CDE;
     border: 2px solid #7B8CDE;
 }
+
+
+/* .form_container .form-group label{
+    margin-bottom: 2%;
+} */
 
 
 .signup_link{

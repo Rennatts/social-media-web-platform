@@ -6,6 +6,8 @@
 
 
 .img_container{
+    /* background-image: url('./../images//login.svg');
+    background-size: 120px; */
     width: 700px;
     height: 100%;
 }
