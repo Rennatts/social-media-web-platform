@@ -28,44 +28,32 @@ function Users({ users, userError }) {
 
     return (
         <div className="users_main_container">
-            <div className="users_row">
-                <div className="users_container">
-                    {showError()}
-                    <div className="users_card">
-                        <div className="users_card_header">
-                            <h3 className="card-title">
-                                Profiles
-                            </h3>
-                        </div>
-                        <div className="users_card_body">
-                            <ul className="users_list_group">
-                                {
-                                users.users && users.users.map((user, index) => (
-                                    <li className="list_users" key={index}>
-                                        <Link className="users_link"
-                                        to={`/user/${user._id}`} 
-                                        style={{textDecoration: "none"}}
-                                        key={index}>
-                                        
-                                       
-                                        <img 
-                                        className="user_profile_img"
-                                        src={user.url} 
-                                        alt= {user.name}
-                                        ></img>
-                                        <h4 className="user_name">{user.name}</h4>
-         
-                                        </Link>
-                                    </li>
-                                    
-                                ))
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {showError()}
+            <div className="users_card_body">
+                <ul className="users_list_group">
+                    {
+                    users.users && users.users.map((user, index) => (
+                        <li className="list_users" key={index}>
+                            <Link className="users_link"
+                            to={`/user/${user._id}`} 
+                            style={{textDecoration: "none"}}
+                            key={index}>
+                            
+                            
+                            <img 
+                            className="user_profile_img"
+                            src={user.url} 
+                            alt= {user.name}
+                            ></img>
+                            <h4 className="user_name">{user.name}</h4>
 
+                            </Link>
+                        </li>
+                        
+                    ))
+                    }
+                </ul>
+            </div>
         </div>
     );
 
