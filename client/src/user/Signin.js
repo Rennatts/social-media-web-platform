@@ -62,7 +62,11 @@ function Signup ({ userError, userSuccess }) {
 
 
     return (
-        <div className="container">
+        <div className='main_intro'>
+            <div className='intro'>
+                <h1>Welcome to social media</h1> 
+            </div>   
+            <div className="container">
 
             {showError()}
 
@@ -70,10 +74,10 @@ function Signup ({ userError, userSuccess }) {
 
             {error && (error !== null || error !== "" || error !== {}) && (
             <div>Something went wrong...</div>
-          )}            
-            <div className='img_container'>
-                <img src={LoginLogo} alt="login_logo"></img>
-            </div>
+            )}        
+                <div className='img_container'>
+                    <img src={LoginLogo} alt="login_logo"></img>
+                </div>
                 <div className='form_container'>
                     <form className='form'> 
                         <div className="form-group">
@@ -109,6 +113,7 @@ function Signup ({ userError, userSuccess }) {
                         </div>
                     </form>
                 </div>
+            </div>
         </div>
     )
 };

@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    margin-top: 12%;
+    background-color: pink;
 }
 
 
@@ -30,7 +30,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-top: 18px;
 }
 
 .form-group input{
@@ -82,3 +81,13 @@
     color: #9999C3;;
 }
 
+
+.container h1{
+    margin-button: -50px;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
