@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import './css/FollowComponent.css';
-import DefaultProfile from './../images/avatar.png';
+import DefaultProfile from './../images/avatar01';
 
 
 function FollowComponent({data, trigger, setTrigger}) {
@@ -16,12 +16,12 @@ function FollowComponent({data, trigger, setTrigger}) {
                     className="profile_container"
                     key={user._id}
                     onClick={()=> history.push(`/user/${user._id}`)}>                                  
-                    <img 
+                    {/* <img 
                         src={user.url} 
                         className="profile_image"
                         onError= {i => (i.target.src= `${DefaultProfile}`)}
                         alt= "userphoto"
-                    ></img>
+                    ></img> */}
                     <h4 className="mt-3">{user.name}</h4>
                 </div>   
                 ))}

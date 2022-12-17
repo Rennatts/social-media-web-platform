@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useDispatch, connect } from 'react-redux'; 
 import { isLogged } from './../../auth';
 import { getFollowingPosts } from '../../redux/actions/postActions';
-import Post from '../../components/Post';
+import Post from './../../posts/Post';
 
 
 function Feed({ feedPosts }) {

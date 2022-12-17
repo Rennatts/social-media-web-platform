@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { isAuthenticated, updateUser } from './../auth';
 import { Redirect} from 'react-router-dom';
-import DefaultProfile from '../images/avatar.jpg';
+//import DefaultProfile from './../images/avatar';
 import './css/EditProfile.css';
 
 
@@ -182,13 +182,13 @@ class EditProfile extends Component {
                     </div>
 
                     
-                    <img 
+                    {/* <img 
                     style={{height: "200px", width: "auto"}} 
                     className= "img-thumbnail"
                     src={file}
                     onError= {i => (i.target.src= `${DefaultProfile}`)} 
                     alt={name}
-                    ></img>
+                    ></img> */}
 
                     {this.signupForm(name, password, about)}
                 </div>

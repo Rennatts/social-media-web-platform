@@ -8,7 +8,7 @@ import Moment from "react-moment";
 import ImageSlider from '../components/ImageSlider/ImageSlider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart, faForward, faBackward } from "@fortawesome/free-solid-svg-icons";
-import DefaultProfile from '../images/avatar.jpg';
+import DefaultProfile from '../images/avatar';
 import './css/SinglePostList.css';
 
 
@@ -100,11 +100,11 @@ function SinglePostList({ post, match}) {
     <div className="singlepostlist">
         <div className="post_box">
             <div className="user_profile_box">
-                <img 
+                {/* <img 
                 src={post && post.postedBy.url} 
                 alt={post && post.postedBy.name}
                 onError ={i => (i => i.target.src = `${DefaultProfile}`)}
-                ></img>
+                ></img> */}
                 <h5>{post && post.postedBy.name}</h5>
                 <h8>Followers {post && post.postedBy.followers.length}</h8>
             </div>

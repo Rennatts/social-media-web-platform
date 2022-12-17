@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import {Slide} from 'react-slideshow-image';
 import ImageSlider from './../../components/ImageSlider';
-import DefaultProfile from './../../images/avatar.jpg';
+import DefaultProfile from './../../images/avatar';
 import {useHistory} from 'react-router-dom';
 
 

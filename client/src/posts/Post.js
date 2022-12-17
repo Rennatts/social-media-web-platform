@@ -1,15 +1,15 @@
 import React, {useState, useEffect } from 'react'
-import { isLogged } from './../auth';
+import { isLogged } from './../auth/index';
 import { useDispatch } from 'react-redux';
-import {likeposttwo, unlikeposttwo, deletePost} from './../redux/actions/postActions';
-import CommentsList from './CommentsList';
+import {likeposttwo, unlikeposttwo, deletePost} from '../redux/actions/postActions';
+import CommentsList from '../components/CommentsList';
 import Moment from "react-moment";
 import { Link } from 'react-router-dom';
 import './css/Post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-import ImageSlider from './../components/ImageSlider';
-import DefaultProfile from '../images/avatar.jpg';
+import ImageSlider from '../components/ImageSlider';
+//import DefaultProfile from './../images/avatar';
 import {useHistory} from 'react-router-dom';
 
 
@@ -23,7 +23,6 @@ function Post({ post }) {
     const [length, setLength] = useState();
 
     const history = useHistory();
-
 
     const date = new Date(post && post.created);
     const jwt = isLogged();
@@ -74,19 +73,16 @@ function Post({ post }) {
     return (
         <div className="post_box">
             <div className="user_profile_box">
-                <img 
+                {/* <img 
                 src={post && post.postedBy.url} 
                 alt={post && post.postedBy.name}
                 onError ={i => (i => i.target.src = `${DefaultProfile}`)}
-                ></img>
+                ></img> */}
                 <h5>{post && post.postedBy.name}</h5>
-                <h8>Followers {post && post.postedBy.followers.length}</h8>
             </div>
 
-            <div className="post_box_info">
-                <div className="date_box">
-                   <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
-                </div>
+            <div className="date_box">
+                <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
             </div>
 
             <ImageSlider image={post && post.url}></ImageSlider>

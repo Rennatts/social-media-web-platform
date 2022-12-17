@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from './ImageSlider/ImageSlider';
-import DefaultProfile from '../images/avatar.jpg';
+//import DefaultProfile from './../images/avatar';
 import {useHistory} from 'react-router-dom';
 import './css/RankingPost.css';
 
@@ -64,11 +64,11 @@ function RankingPost({ post }) {
     return (
         <div className="post_box_ranking">
             <div className="user_profile_box_ranking">
-                <img 
+                {/* <img 
                 src={post && post.postedBy.url} 
                 alt={post && post.postedBy.name}
                 onError ={i => (i => i.target.src = `${DefaultProfile}`)}
-                ></img>
+                ></img> */}
                 <h5>{post && post.postedBy.name}</h5>
                 <h8>Followers {post && post.postedBy.followers.length}</h8>
 

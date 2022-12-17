@@ -1,18 +1,19 @@
 .post_container{
-    margin-top: 50px;
+    margin-top: 10px;
     margin: 0;
     display: flex;
     justify-content: center;
-
 }
 
 .post_box{
+    border-style: groove;
+    border-color: #71c4c7;
+    border-radius: 17px;
     color: black;
     width: 900px;
     padding: 30px 0;
     margin-top: 35px;
     margin-bottom: 35px;
-    background-color: white;
 
 }
 
@@ -22,15 +23,10 @@
     align-items: center;
     flex-direction: row;
     margin-left: 20px;
-    margin-top: -30px;
-    margin-bottom: 25px;
-    
 }
-
 
 .user_profile_box h5{
     font-size: 20px;
-    color: black;
 
 }
 
@@ -40,8 +36,8 @@
 }
 
 .user_profile_box img{
-    height: 60px;
-    width: 90px;
+    height: 40px;
+    width: 60px;
     margin-right: 22px;
     border-radius: 50%;
 }
@@ -56,11 +52,6 @@
     justify-content: space-between;
     height: 80px;
     padding: 10px 0;
-    margin: 5px 0;
-    border-top:    0.7px solid  #ccc;
-    border-right:  0.02px solid #ccc;
-    border-bottom: 0.7px solid #ccc;
-    border-left:   0.02px solid  #ccc;
 
 }
 
@@ -69,25 +60,11 @@
     margin-top: -2px;
 }
 
-.product_brand h5{
-    color: black;
-}
-
 .date_box{
     margin-right: 25px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
-
-.post_link{
-    text-decoration: none;
-}
-
-
-.post_box_info h5{
-    font-size: 16px;
-
-}
 
 .date{
     margin-top: -20px;
@@ -206,7 +183,7 @@
 .bottom_box{
     display: flex;
     justify-content: center;
-    margin-top: -20px;
+    margin-top: 13px;
     height: 80px;
 
 }
@@ -217,7 +194,7 @@
     justify-content: center;
     margin-left: 40px;
     margin-top: 15px;
-    align-items: center;
+   align-items: center;
 }
 
 .comments_link{
@@ -266,7 +243,7 @@
 
 .trash_icon_post{
     position: relative;
-    font-size: 1rem;
+    font-size: 1.4rem;
     opacity: 0.85;
     cursor: pointer;
     transition: .3s;
@@ -283,13 +260,13 @@
 }
 
 .trash_icon_post:active{
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 
 .edit_icon_post{
     position: relative;
-    font-size: 1rem;
+    font-size: 1.4rem;
     opacity: 0.85;
     cursor: pointer;
     transition: .3s;
@@ -304,8 +281,11 @@
 }
 
 .edit_icon_post:active{
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
+
+
+
 
 
 
@@ -314,9 +294,7 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
-    margin-top: 40px;
-    margin-left: 9px;
-
+    margin-top: 20px;
 }
 
 .leave_comment_main_container span{
@@ -333,9 +311,7 @@
     background-color: #e6e9ed;
     margin-left: 20px;
     font-size: 16px;
-    height: 30px;
-    width: 700px;
-    outline: none;
+    height: 25px;
 }
 
 .leave_comment_main_container button{
@@ -345,6 +321,33 @@
 
 
 
+
+.main_comments_container{
+    border: 2px solid rgb(219, 217, 217);
+    background-color: #f2f5f8;
+    padding: 10px 0;
+}
+
+
+.comment_basicinfo{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 7px 0;
+    
+}
+
+.img_profile_comment{
+    border-radius: 70px;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px 
+}
+
+.name_comment,
+.date_comment{
+    margin-left: 10px;
+}
 
 
 .col-12{
@@ -372,54 +375,4 @@
 
 .card_text_comment{
     margin-left: 10px;
-}
-
-.search-topic-wrapper{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-}
-
-.search-topic-wrapper input{
-    width: 400px;
-    height: 25px;
-    border: none;
-    outline: none;
-}
-
-.header__searchIcon {
-    background-color: #495274;
-    padding: 3px;
-    height: 70px;
-    color: white;
-    opacity: 0.8;
-}
-
-
-.post_link{
-    text-decoration: none;
-    color: black;
-}
-
-
-.btn_send_comment{
-    position: absolute;
-    right: 345px;
-    border: none;
-    background-color: #495274;
-    color: white;
-    font-weight: 500;
-    font-size: 14px;
-    
-}
-
-.btn_send_comment:hover{
-    background-color: #6875a5;
-
-}
-
-
-.user_profile{
-    text-decoration: none;
-    color: black;
 }

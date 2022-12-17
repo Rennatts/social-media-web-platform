@@ -3,7 +3,7 @@ import { useParams, Link, Redirect, useHistory  } from 'react-router-dom';
 import { isLogged, checkAuth, logout } from './../auth/index';
 import { getUser, deleteUser } from '../redux/actions/userActions';
 import FollowButton from './../components/FollowButton';
-import DefaultProfile from '../images/avatar.jpg';
+//import DefaultProfile from './../images/avatar';
 import { useDispatch, connect } from "react-redux";
 import {TOGGLE_SUCCESS} from '../redux/types/userTypes';
 import { getPostsByUser } from '../redux/actions/postActions';
@@ -150,12 +150,12 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                             <div className='main'>
                                 <div className='image'>
                                     <div className='hover'>
-                                        <img
+                                        {/* <img
                                             className='img-thumbnail'
                                             src={user && user.url}  
                                             alt= {user && user.name}
                                             onError= {i => (i.target.src= `${DefaultProfile}`)}
-                                        ></img>  
+                                        ></img>   */}
                                     </div>
                                 </div>
                                 <h3 className='name'>{user && user.name}</h3>

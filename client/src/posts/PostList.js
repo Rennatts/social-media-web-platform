@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { isLogged } from './../auth/index';
-import Post from './../components/Post';
+import Post from './Post';
 import SearchIcon from "@material-ui/icons/Search";
 import './css/PostList.css';
 

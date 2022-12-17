@@ -6,7 +6,7 @@ import Moment from "react-moment";
 import ImageSlider from '../components/ImageSlider/ImageSlider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart, faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
-import DefaultProfile from '../images/avatar.jpg';
+//import DefaultProfile from './../images/avatar';
 import {useHistory, Link} from 'react-router-dom';
 import './css/SinglePost.css';
 
@@ -95,11 +95,11 @@ function SinglePost({ post, match}) {
     return (
         <div className="singlepost">
             <div className="user_profile_box">
-                <img 
+                {/* <img 
                 src={post.postedBy.url} 
                 alt={post && post.postedBy.name}
                 onError ={i => (i => i.target.src = `${DefaultProfile}`)}
-                ></img>
+                ></img> */}
                 <h5>{post && post.postedBy.name}</h5>
                 <h8>Followers {post && post.postedBy.followers.length}</h8>
             </div>
