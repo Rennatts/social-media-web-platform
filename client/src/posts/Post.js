@@ -9,7 +9,7 @@ import './css/Post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from '../components/ImageSlider';
-//import DefaultProfile from './../images/avatar';
+import DefaultProfile from './../images/avatar.png';
 import {useHistory} from 'react-router-dom';
 
 
@@ -72,26 +72,29 @@ function Post({ post }) {
 
     return (
         <div className="post_box">
-            <div className="user_profile_box">
-                {/* <img 
-                src={post && post.postedBy.url} 
-                alt={post && post.postedBy.name}
-                onError ={i => (i => i.target.src = `${DefaultProfile}`)}
-                ></img> */}
-                <h5>{post && post.postedBy.name}</h5>
+            <div className='user_profile_box'>
+                <div className='photo_name_box'>
+                    <img 
+                    src={post && post.postedBy.url} 
+                    alt={post && post.postedBy.name}
+                    onError ={i => (i => i.target.src = `${DefaultProfile}`)}
+                    ></img>
+                    <h5>{post && post.postedBy.name}</h5>
+                </div>
+                <div className='date_box'>
+                    <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
+                </div>
             </div>
 
-            <div className="date_box">
+            {/* <div className="date_box">
                 <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
+            </div> */}
+            
+            <div className="body_box">
+                <p>{post && post.body}</p>
             </div>
 
             <ImageSlider image={post && post.url}></ImageSlider>
-
-            <div cassName="img_container">
-                <div className="body_box">
-                    <p><h10 className="username">{post && post.postedBy.name} </h10>{post && post.body}</p>
-                </div>
-            </div> 
 
             <div className="bottom_box">    
                 <div className="comments_box">
