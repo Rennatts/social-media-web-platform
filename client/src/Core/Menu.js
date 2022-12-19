@@ -73,20 +73,12 @@ const Menu = ({ currentUser }) => {
                         href="#"><i className="far fa-plus-square"></i>
                     </NavLink> 
 
-                    <NavLink to="/notifications" className="nav_link_active"
+                    {/* <NavLink to="/notifications" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#7B8CDE"
                         }}
                         href="#"><i className="far fa-bell"></i>
-                    </NavLink> 
-
-                    {/* <NavLink to="/notifications/" className="nav_link_active"
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#7B8CDE"
-                        }}
-                        href="#"><i className="fas fa-folder-plus"></i>
                     </NavLink>  */}
 
                     <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
