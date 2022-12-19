@@ -61,16 +61,6 @@ const Menu = ({ currentUser }) => {
                         className="nav_link_active" 
                         href="#"><i className="fas fa-users"></i>
                     </NavLink>
-
-                    <NavLink exact to={`/posts/feed/${isAuthenticated().user._id}`}  
-                        className="nav_link_active"
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#7B8CDE"
-                        }}
-                        href="#">
-                        Feed
-                    </NavLink>  
                 </div>
 
                 <div className='right_nav'>
@@ -91,13 +81,13 @@ const Menu = ({ currentUser }) => {
                         href="#"><i className="far fa-bell"></i>
                     </NavLink> 
 
-                    <NavLink to="/notifications/" className="nav_link_active"
+                    {/* <NavLink to="/notifications/" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#7B8CDE"
                         }}
                         href="#"><i className="fas fa-folder-plus"></i>
-                    </NavLink> 
+                    </NavLink>  */}
 
                     <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
                         className="nav_link_active"
