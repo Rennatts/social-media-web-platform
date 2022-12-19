@@ -1,11 +1,6 @@
-
 .main_comments_container{
-    border: 0.5px solid rgb(219, 217, 217);
-    background-color: #f2f5f8;
-    margin-left: -25px;
-    padding-bottom: 13px;
     margin-top: 3px;
-
+    background-color: pink;
 }
 
 .comment_basicinfo{
@@ -18,9 +13,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding: 7px 0;
-    
-    
+    padding: 7px 0; 
 }
 
 .img_profile_comment{

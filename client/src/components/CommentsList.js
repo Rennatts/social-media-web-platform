@@ -23,35 +23,25 @@ function CommentsList({ postId, comments }) {
 
     const userId = jwt.user._id;
 
-    console.log(comments);
-
     const slice = comments.slice(0, noOfElement);
  
     return (
         <div classList="comments_list">
-
             <div className="comments">
-    
                 {
                     slice.map((item, index) => (
                         <Comment comment={item} key={index} postId={postId}></Comment>
                     ))
                 }
-    
-                 
             </div>
-
 
             {comments.length > 2 ? 
             (<div className="comments_buttons">
-                <button class="close-btn" onClick={() => loadMore()}>Load More Comments</button>
-                <button class="close-btn" onClick={() => close()}>Close Comments</button>
+                <button class="show_hide_comments" onClick={() => loadMore()}>Load More Comments</button>
+                <button class="show_hide_comments" onClick={() => close()}>Close Comments</button>
             </div>) 
             : (null)
             }
-
-
-
         </div>
     );
 };

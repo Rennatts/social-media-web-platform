@@ -1,17 +1,10 @@
-
-.comments{
-    position: relative;
-    right: 0;
-    left: 25px;
-    width: 875px;
-    height: 100%;
-    margin-top: 20px;
-}
-
-.close-btn{
+.show_hide_comments{
     height: 30px;
     width: 180px;
     border: none;
+    border-radius: 12px;
+    border: 1px solid #7c7c7d;
+    cursor: pointer;
 }
 
 .comments_buttons{
@@ -26,8 +19,10 @@
     background-color: #f2f5f8;
 }
 
-.comments_buttons button:hover{
-    background-color: #a2aac5;
+.show_hide_comments:hover{
+    background-color: #7B8CDE;
+    color: white;
+    border: none;
 }
 
 

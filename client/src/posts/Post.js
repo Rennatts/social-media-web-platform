@@ -7,9 +7,9 @@ import Moment from "react-moment";
 import { Link } from 'react-router-dom';
 import './css/Post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faHeart, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faHeart, faEdit, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from '../components/ImageSlider';
-import DefaultProfile from './../images/avatar.png';
+import defaultProfile from './../images/avatar.png';
 import {useHistory} from 'react-router-dom';
 
 
@@ -70,15 +70,22 @@ function Post({ post }) {
     }
 
 
+
+    function GetProfilePhoto (){
+        if(post.postedBy.url){
+            return <img src={post && post.postedBy.url} alt={post && post.postedBy.name}></img> 
+        } else {
+            return <img src={require('./../images/avatar.png')} alt="default_profile_photo"></img> 
+        }
+    }
+
+
     return (
+
         <div className="post_box">
             <div className='user_profile_box'>
                 <div className='photo_name_box'>
-                    <img 
-                    src={post && post.postedBy.url} 
-                    alt={post && post.postedBy.name}
-                    onError ={i => (i => i.target.src = `${DefaultProfile}`)}
-                    ></img>
+                    <GetProfilePhoto/>
                     <h5>{post && post.postedBy.name}</h5>
                 </div>
                 <div className='date_box'>
@@ -86,9 +93,6 @@ function Post({ post }) {
                 </div>
             </div>
 
-            {/* <div className="date_box">
-                <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
-            </div> */}
             
             <div className="body_box">
                 <p>{post && post.body}</p>
@@ -98,8 +102,8 @@ function Post({ post }) {
 
             <div className="bottom_box">    
                 <div className="comments_box">
-                  <FontAwesomeIcon onClick={()=> history.push("/comments")} className="comment_icon" icon={faComment} size = '2x'></FontAwesomeIcon>
-                  <Link className="comments_link"><h5 className="mr-2">{post && post.comments.length}</h5></Link>
+                  <FontAwesomeIcon className="comment_icon" icon={faComment} size = '1x'></FontAwesomeIcon>
+                  <p className="comments_link"><h5 className="mr-2">{post && post.comments.length}</h5></p>
                 </div>
 
                 <div className="likes_box">
@@ -110,7 +114,7 @@ function Post({ post }) {
                             {" "}
                             {likes? likes.length: 0}{" "}
                         </span>
-                        <FontAwesomeIcon icon={faHeart} size = '2x' onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
+                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
                         className="fa-heart">
                         </FontAwesomeIcon>
                         </h5>
@@ -120,7 +124,7 @@ function Post({ post }) {
                             {" "}
                             {likes? likes.length: 0}{" "}
                         </span>
-                        <FontAwesomeIcon icon={faHeart} size = '2x' onClick={()=> dispatch(likeposttwo(userId, token, postId))}
+                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(likeposttwo(userId, token, postId))}
                         className="fa-heart" >
                         </FontAwesomeIcon>
                         </h5>

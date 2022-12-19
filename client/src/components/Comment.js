@@ -10,23 +10,15 @@ function Comment({ comment, postId}) {
     const date = new Date(comment.created);
 
     const postedBy = comment.postedBy._id;
-
     const userId = jwt.user._id;
 
-    
-    console.log(comment);
 
     function confirDeleteComment(){ 
         let answer = window.confirm("Are you sure you want to delete the comment?")
         if(answer) {
             dispatch(deleteComment(jwt.token, userId, postId, comment));
         }
-        
     };
-
-    console.log(comment);
-
-
 
     return (
         <div className="main_comments_container">

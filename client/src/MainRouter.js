@@ -12,7 +12,6 @@ import {connect} from 'react-redux';
 import AllPosts from './posts/AllPosts';
 import AddPost from './posts/AddPost';
 import Topics from './posts/Topics';
-import Comments from './components/Comments';
 import MostLikedPosts from './posts/MostLikedPosts';
 import MostCommentedPosts from './posts/MostCommentedPosts';
 import SinglePost from './posts/SinglePost';
@@ -38,7 +37,6 @@ function MainRouter({ currentUser }){
                     <Route exact path="/posts/allposts" component={AllPosts}></Route>
                     <Route exact path="/trading" component={Topics}/>    
                     <Route exact path="/post/:postId" component={SinglePost}></Route>
-                    <PrivateRoute exact path="/comments" component={Comments}></PrivateRoute>
                     <Route exact path="/trading/most_liked" component={MostLikedPosts}></Route>
                     <Route exact path="/trading/most_commented" component={MostCommentedPosts}></Route>
                     <PrivateRoute exact path="/posts/feed/:userId" component={Feed}></PrivateRoute>
