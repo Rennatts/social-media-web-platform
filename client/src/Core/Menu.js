@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link, withRouter, useHistory } from 'react-router-dom';
 import { isAuthenticated, signout, brandSignout  } from './../auth/index';
 import './Menu.css';
 
 
+
 const Menu = ({ currentUser }) => {
+    const [header, setHeader] = useState("header")
+
+    const listenScrollEvent = (event) => {
+        if (window.scrollY < 73) {
+          return setHeader("header")
+        } else if (window.scrollY > 70) {
+          return setHeader("header2")
+        } 
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', listenScrollEvent);
+      
+        return () =>
+          window.removeEventListener('scroll', listenScrollEvent);
+    }, []);
+
+
     let history = useHistory();
 
     console.log(isAuthenticated());
 
+
+
     return (
-        <div className="main_nav">
+        <div className={header}>
             {!isAuthenticated() && (
                 <> 
                 </>
