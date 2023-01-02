@@ -3,7 +3,7 @@ import { useParams, Link, Redirect, useHistory  } from 'react-router-dom';
 import { isLogged, checkAuth, logout } from './../auth/index';
 import { getUser, deleteUser } from '../redux/actions/userActions';
 import FollowButton from './../components/FollowButton';
-//import DefaultProfile from './../images/avatar';
+import DefaultProfile from './../images/avatar.png';
 import { useDispatch, connect } from "react-redux";
 import {TOGGLE_SUCCESS} from '../redux/types/userTypes';
 import { getPostsByUser } from '../redux/actions/postActions';
@@ -118,10 +118,6 @@ function Profile({ userSuccess, userError, userPosts, match }) {
             <div className='profile_container'>
                 <div className='profile_card'>
                     <div className='profile-header'>
-                        <div className='hambuerguer-menu'>
-                            <div className='profile_center'></div>
-                        </div>
-
                         {
                         checkAuth(userId) ? (  
                         <>
@@ -129,9 +125,6 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                                 <Link to={`/user/edit/${userId}`}>
                                     <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
                                 </Link>
-                            </div>
-
-                            <div className="delete_icon">
                                 <Link to="#" 
                                 onClick={() => deleteConfirmed()}>
                                     <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
@@ -147,15 +140,15 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                         {redirect ? (
                             <Redirect to="/" ></Redirect>
                         ) : (
-                            <div className='main'>
+                            <div className='image_box'>
                                 <div className='image'>
                                     <div className='hover'>
-                                        {/* <img
+                                        <img
                                             className='img-thumbnail'
                                             src={user && user.url}  
                                             alt= {user && user.name}
                                             onError= {i => (i.target.src= `${DefaultProfile}`)}
-                                        ></img>   */}
+                                        ></img>  
                                     </div>
                                 </div>
                                 <h3 className='name'>{user && user.name}</h3>
@@ -166,7 +159,6 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                         <div className={current ? "left_user" : "left"}>
                             <div className="about_container">
                                 <h3 className="title">About</h3>
-                                <p>dajwdkjawdjadçaiwdajwdjeferferfrefer</p>
                                 { checkAuth(userId) ? 
                                     (null) : 
                                     (<FollowButton 
@@ -177,8 +169,7 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                                     userId = {jwt && jwt.user._id}
                                     ></FollowButton>)
                                 }
-                            </div>
-
+                            </div>  
                         </div>
 
                         <div className="content">
