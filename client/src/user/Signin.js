@@ -110,7 +110,7 @@ function Signup ({ userError, userSuccess }) {
                             <div class="forgot_password">Forgot Password?</div>
 
                             <div className="signup_link">Not a member?
-                                <Link to="/signup" classNmae="signup"> Singup</Link>
+                                <Link to="/signup" className="signup"> Sing up</Link>
                             </div>.
                         </div>
                     </form>
