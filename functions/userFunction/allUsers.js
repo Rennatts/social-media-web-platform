@@ -9,5 +9,5 @@ module.exports = (req, res)=> {
             });
         }
         res.json({users})
-    }).select("name email updated created url key");
+    }).select("name email updated created url key followers");
 };

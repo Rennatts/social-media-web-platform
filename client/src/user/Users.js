@@ -5,6 +5,7 @@ import { getAllUsers } from '../redux/actions/userActions';
 import {Link} from 'react-router-dom';
 import './css/Users.css';
 import Moment from "react-moment";
+import DefaultProfile from './../images/avatar.png';
 
 
 function Users({ users, userError }) {
@@ -41,13 +42,19 @@ function Users({ users, userError }) {
                         style={{textDecoration: "none"}}
                         key={index}>
                             <li className="list_users" key={index}>
-                                <img 
-                                className="user_profile_img"
-                                src={user.url} 
-                                alt= {user.name}
-                                ></img>
-                                <h4 className="user_name">{user.name}</h4>
-                                <p>Profile created at <Moment className="date" format="YYYY-MM-DD">{user.created}</Moment></p>
+                                <div className='header_box'>
+                                    <img 
+                                    className="user_profile_img"
+                                    src={user.url} 
+                                    alt= {user.name}
+                                    onError= {i => (i.target.src= `${DefaultProfile}`)}
+                                    ></img>
+                                    <h4 className="user_name">{user.name}</h4>
+                                </div>
+                                <div className='info_box'>
+                                   <p>followers: {user.followers.length}</p>
+                                   <p>Profile since <Moment className="date" format="YYYY-MM-DD">{user.created}</Moment></p>
+                                </div>
                             </li>
                         </Link>
                     ))

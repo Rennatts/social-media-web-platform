@@ -16,7 +16,6 @@ function ProfilePosts({ post }) {
     const [like, setLike] = useState(false);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState(false);
-    const [fullproduct, setFullproduct]= useState();
     const[currentImage, setCurrentImage] = useState(0);
     const [length, setLength] = useState();
 
@@ -77,9 +76,7 @@ function ProfilePosts({ post }) {
 
             <div className="post_box_info_profile">
                 <div className="product_brand_profile">
-                    <h5>Procuct: {post.productname}</h5>
-                    <h5>Brand: {post.brand}</h5>
-                    <h5>Category: {post.category}</h5>
+                    <h5>{post.title}</h5>
                     <div className="date_box_profile">
                        <Moment className="date" format="HH:mm YYYY-MM-DD">{post.created}</Moment>
                     </div>
@@ -88,13 +85,11 @@ function ProfilePosts({ post }) {
 
             <ImageSliderProfile image={post.url}></ImageSliderProfile>
 
-            <div className="teste">  
-                <Link className="comments_link_profile">
-                    <div className="comments_box_profile">
-                        <FontAwesomeIcon className="comment_icon_profile" icon={faComment} size = '2x'></FontAwesomeIcon>
-                        <h5 className="mr-2_profile">{post.comments.length}</h5>
-                    </div>
-                </Link>  
+            <div className="bottom_box">  
+                <div className="comments_box_profile">
+                    <FontAwesomeIcon className="comment_icon_profile" icon={faComment} size = '1x'></FontAwesomeIcon>
+                    <h5 className="mr-2_profile">{post.comments.length}</h5>
+                </div>
 
                 <div className="likes_box_profile">
                     {
@@ -104,7 +99,7 @@ function ProfilePosts({ post }) {
                             {" "}
                             {likes? likes.length: 0}{" "}
                         </span>
-                        <FontAwesomeIcon icon={faHeart} size = '2x' onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
+                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
                         className="fa-heart_profile">
                         </FontAwesomeIcon>
                         </h5>
@@ -114,7 +109,7 @@ function ProfilePosts({ post }) {
                             {" "}
                             {likes? likes.length: 0}{" "}
                         </span>
-                        <FontAwesomeIcon icon={faHeart} size = '2x' onClick={()=> dispatch(likeposttwo(userId, token, postId))}
+                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(likeposttwo(userId, token, postId))}
                         className="fa-heart_profile" >
                         </FontAwesomeIcon>
                         </h5>

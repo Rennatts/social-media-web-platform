@@ -10,12 +10,41 @@
 
 
 .users_list_group {
+    color: gray;
     display: grid;
     list-style-type: none;
-    width: 95vw;
+    width: 90vw;
     height: 92vh;
-    grid-template-columns: 0.8fr 0.8fr;
-    grid-gap: 6em;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    grid-gap: 3em;
+}
+
+.users_link{
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.header_box{
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5%;
+    font-size: 18px;
+}
+
+.info_box{
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 8%;
+    margin-left: 3%;
+}
+
+.info_box p{
+    margin-top: 3%;
 }
 
 
@@ -30,8 +59,7 @@
     background-color: #f2f6fa;
     padding: 4% 1%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
 .user_profile_img{
