@@ -4,12 +4,11 @@ import { useDispatch } from 'react-redux';
 import {likeposttwo, unlikeposttwo, deletePost} from '../redux/actions/postActions';
 import CommentsList from '../components/CommentsList';
 import Moment from "react-moment";
-import { Link } from 'react-router-dom';
 import './css/Post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComment, faHeart, faEdit, faTrash, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faHeart, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from '../components/ImageSlider';
-import defaultProfile from './../images/avatar.png';
+import DefaultProfile from './../images/avatar.png';
 import {useHistory} from 'react-router-dom';
 
 
@@ -18,10 +17,6 @@ function Post({ post }) {
     const [likes, setLikes] = useState([]);
     const [like, setLike] = useState(false);
     const [comments, setComments] = useState([]);
-    const [comment, setComment] = useState(false);
-    const[currentImage, setCurrentImage] = useState(0);
-    const [length, setLength] = useState();
-
     const history = useHistory();
 
     const date = new Date(post && post.created);
@@ -61,31 +56,23 @@ function Post({ post }) {
         }
     };
 
-    function confirDeletePost(){ 
+    function confirmDeletePost(){ 
         let answer = window.confirm("Are you sure you want to delete post?")
         if(answer) {
             dispatch(deletePost(jwt.token, post._id));
-        }
-        
-    }
-
-
-
-    function GetProfilePhoto (){
-        if(post.postedBy.url){
-            return <img src={post && post.postedBy.url} alt={post && post.postedBy.name}></img> 
-        } else {
-            return <img src={require('./../images/avatar.png')} alt="default_profile_photo"></img> 
         }
     }
 
 
     return (
-
         <div className="post_box">
             <div className='user_profile_box'>
                 <div className='photo_name_box'>
-                    <GetProfilePhoto/>
+                    <img 
+                        src={post.postedBy.url} 
+                        alt= {post.postedBy.name}
+                        onError= {i => (i.target.src= `${DefaultProfile}`)}
+                    ></img>
                     <h5>{post && post.postedBy.name}</h5>
                 </div>
                 <div className='date_box'>
@@ -133,7 +120,7 @@ function Post({ post }) {
                 </div>
                 {post.postedBy._id === jwt.user._id && 
                 <div className="post_edit">
-                    <FontAwesomeIcon icon={faTrash} className="trash_icon_post" onClick={confirDeletePost}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faTrash} className="trash_icon_post" onClick={confirmDeletePost}></FontAwesomeIcon>
                     <FontAwesomeIcon icon={faEdit} className="edit_icon_post"></FontAwesomeIcon>
                 </div>
                 }

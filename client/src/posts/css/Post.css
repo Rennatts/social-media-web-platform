@@ -34,6 +34,11 @@
     align-items: center;
 }
 
+.user_profile_box .photo_name_box img{
+    width: 12%;
+    height: 10%;
+}
+
 .user_profile_box .date_box{
     margin-top: 10px;
     font-size: 13px;
