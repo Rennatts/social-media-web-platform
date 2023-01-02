@@ -73,7 +73,7 @@ function Post({ post }) {
                         alt= {post.postedBy.name}
                         onError= {i => (i.target.src= `${DefaultProfile}`)}
                     ></img>
-                    <h5>{post && post.postedBy.name}</h5>
+                    <h2>{post && post.postedBy.name}</h2>
                 </div>
                 <div className='date_box'>
                     <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
