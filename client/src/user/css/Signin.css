@@ -6,12 +6,12 @@
     margin-top: 6%;
 }
 
-
 .container {
     display: flex;
     flex-direction: row;
-    margin-top: 60px;
+    margin-top: 12%;
 }
+
 
 
 .img_container{
@@ -88,9 +88,4 @@
 .signup{
     text-decoration: none;
     color: #9999C3;;
-}
-
-
-.container h1{
-    margin-bottom: -50px;
 }
