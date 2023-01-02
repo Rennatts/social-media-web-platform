@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Redirect} from 'react-router-dom';
 import { useDispatch, connect } from 'react-redux';
 import { signup } from './../redux/actions/userActions';
+import { Link } from 'react-router-dom';
 import './css/Signup.css';
 
 import {
@@ -63,7 +64,12 @@ function Signup ({ userError, userSuccess }) {
 
 
     return (
-        <div className="container">
+        <div className="signup_container">
+            <div className='go_back_btn'>
+                <Link to="/">
+                    <button to="/" className=''>Go Back</button>
+                </Link>
+            </div>
 
             {showError()}
 

@@ -68,7 +68,7 @@ function Signup ({ userError, userSuccess }) {
                 <p>The best place to make new friends</p>
                 <p>Get to know about what is going on in the web</p>
             </div>   
-            <div className="container">
+            <div className="signin_container">
 
             {showError()}
 
