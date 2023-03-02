@@ -1,43 +1,30 @@
+##Social media 
+This is my first full-stack project which I started in fall 2020 after months of fully committing myself to learning web development. Now, in fall 2022, I am improving it by fixing some junior-level issues and implementing better solutions for some of the functionalities, resulting in cleaner code.
 
+##Project Description
+The project is a social media platform that uses the following technologies:
 
-This is my very first all-designed and implemented full-stack project. It was born in 2020 fall after a few months of 
-fully committed to learning web development.
+- Node.js and Express in the back-end
+- MongoDB as the database
+- React in the front-end
+- AWS S3 to save multiple images
+- Redux to handle state management
 
-Now, in 2022 fall, I'm trying to fix some very junior things that now I can fully see that have a better 
-solutions of how to implement it and my code have become cleaner, fixing some things here and there. 
+##Installation
+To install the node modules in the back-end and front-end, follow these steps:
 
+1. Use node version 16 or a previous version.
+2. Navigate to the project's root directory.
+3. Run the following command to install the node modules in the back-end:
+`npm install`
+Navigate to the client folder and run the following command to install the node modules in the front-end:
+`npm install`
 
-# Project description
+##How to Run
 
-A social media made using the following technologies:  
+1. Navigate to the project's root directory.
+2. Run the following command:
+`npm run dev`
 
-=> Nodejs and Express in the back-end
-
-=> MongoDB database
-
-=> React in front-end
-
-=> AWS S3 to save multiple images
-
-=> Redux to handle state management
-
-# install node modules in the back and front
-use node version 16 or previous version
-
-install node modules in the back and in the front-end, inside de client folder
-
-```
-npm install
-```
-# How to run
-
-in the root of the project run the followig command line,
-it will run the back and front simultaneously
-
-
-```
-npm run dev
-```
-
-
+**This command will run the back-end and front-end simultaneously.
 
