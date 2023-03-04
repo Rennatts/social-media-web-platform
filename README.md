@@ -17,15 +17,21 @@ To install the node modules in the back-end and front-end, follow these steps:
 1. Use node version 16 or a previous version.
 2. Navigate to the project's root directory.
 3. Run the following command to install the node modules in the back-end:
-`npm install`
-Navigate to the client folder and run the following command to install the node modules in the front-end:
-`npm install`
+```bash 
+npm install
+```
+4. Navigate to the client folder and run the following command to install the node modules in the front-end:
+```bash 
+npm install
+```
 
 ## How to Run
 
 1. Navigate to the project's root directory.
 2. Run the following command:
-`npm run dev`
+```bash 
+npm run dev
+```
 
 ** This command will run the back-end and front-end simultaneously.
 
