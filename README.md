@@ -1,4 +1,5 @@
-## Social media 
+![Social_Media](https://user-images.githubusercontent.com/42363388/222906554-05dfe707-a36a-463b-b9b8-f2f8e1f0d982.png)
+
 This is my first full-stack project which I started in fall 2020 after months of fully committing myself to learning web development. Now, in fall 2022, I am improving it by fixing some junior-level issues and implementing better solutions for some of the functionalities, resulting in cleaner code.
 
 
