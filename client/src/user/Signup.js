@@ -27,6 +27,8 @@ function Signup ({ userError, userSuccess }) {
 
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');
+    const [redirect, setRedirect] = useState(false);
 
 
     useEffect(() => {
@@ -35,20 +37,21 @@ function Signup ({ userError, userSuccess }) {
         }
         if(userSuccess) {
             setSuccess(userSuccess);
+            setSuccessMessage('User successfully registered');
+
             dispatch({type: TOGGLE_SUCCESS})
+            setTimeout(() => {
+                setRedirect(true);
+            }, 3000); 
         }
     }, [userError, userSuccess, dispatch]);
 
 
 
     function redirectUser(){
-        return success && <Redirect to="/"></Redirect>
+        return redirect && <Redirect to="/"></Redirect>
 
     };
-
-    function RegisterMessageSuccess(){
-        return success && window.show("User successfully registered")
-    }
 
 
     function handleInputChange(event) {
@@ -71,17 +74,12 @@ function Signup ({ userError, userSuccess }) {
 
     return (
         <div className="signup_container">
-            {/* <div className='go_back_btn'>
-                <Link to="/">
-                    <button to="/" className=''>Go Back</button>
-                </Link>
-            </div> */}
-
             {showError()}
 
-            {redirectUser()}
 
-            {RegisterMessageSuccess()}
+            {success && <div className='success_message'><p className=''>{successMessage}</p></div>}
+
+            {redirectUser()}
             <div className='img_container'>
                 <div className='go_back_btn'>
                     <Link to="/">
