@@ -5,6 +5,7 @@ import Signup from './user/Signup';
 import Signin from './user/Signin';
 import Menu from './Core/Menu';
 import Profile from './user/Profile';
+import NewProfile from './user/NewProfile';
 import Users from './user/Users';
 import EditProfile from './user/EditProfile';
 import PrivateRoute from './auth/PrivateRoute';
@@ -30,7 +31,7 @@ function MainRouter({ currentUser }){
                     <Route exact path="/" component={Home}></Route>
                     <Route exact path="/signup" component={Signup}></Route>
                     <Route exact path="/signin" component={Signin}></Route>
-                    <PrivateRoute exact path="/user/:userId" component={Profile}></PrivateRoute>
+                    <PrivateRoute exact path="/user/:userId" component={NewProfile}></PrivateRoute>
                     <PrivateRoute exact path="/allusers" component={Users}></PrivateRoute>
                     <PrivateRoute exact path="/user/edit/:userId" component={EditProfile}></PrivateRoute> 
                     <PrivateRoute exact path="/post/create" component={AddPost}></PrivateRoute> 

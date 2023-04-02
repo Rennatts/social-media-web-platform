@@ -174,7 +174,6 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                         </div>
 
                         <div className="content">
-                            
                             <div className="right">
                                 <div>
                                     <h3 className="number">{userPosts.length === 0 ? 0 : userPosts.length}</h3>

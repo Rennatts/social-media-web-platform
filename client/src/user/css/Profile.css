@@ -1,4 +1,4 @@
-.profile_main_container{
+/* .profile_main_container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -316,13 +316,6 @@
 }
 
 .profile_posts{
-    /* flex-direction: row;
-    flex-wrap: wrap;
-    padding-top: -30px;
-    background: #efefef;
-    margin-top: -200px;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.1); */
     position: relative;
     width: 1200px;
     height: 100%;
@@ -382,11 +375,4 @@
     
     }
 
-
-
-
-
-
-
-}
-
+} */
