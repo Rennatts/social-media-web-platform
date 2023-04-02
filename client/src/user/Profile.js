@@ -122,12 +122,11 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                         checkAuth(userId) ? (  
                         <>
                             <div className="edit_icon" >
-                                <Link to={`/user/edit/${userId}`}>
+                                <Link className="edit_icon_link" to={`/user/edit/${userId}`}>
                                     <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
                                 </Link>
-                                <Link to="#" 
-                                onClick={() => deleteConfirmed()}>
-                                    <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
+                                <Link className="edit_icon_link"  to="#" onClick={() => deleteConfirmed()}>
+                                    <FontAwesomeIcon icon={faTrash} style={{cursor: "pointer"}}></FontAwesomeIcon>
                                 </Link> 
                             </div>
                         </> 
@@ -156,8 +155,10 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                             </div>
                         )}
                         
+                        
                         <div className={current ? "left_user" : "left"}>
                             <div className="about_container">
+                                
                                 <h3 className="title">About</h3>
                                 { checkAuth(userId) ? 
                                     (null) : 
@@ -173,6 +174,7 @@ function Profile({ userSuccess, userError, userPosts, match }) {
                         </div>
 
                         <div className="content">
+                            
                             <div className="right">
                                 <div>
                                     <h3 className="number">{userPosts.length === 0 ? 0 : userPosts.length}</h3>

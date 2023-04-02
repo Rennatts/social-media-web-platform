@@ -12,6 +12,8 @@ import {
 import LoginLogo from './../images/login.svg';
 
 
+
+
 function Signup ({ userError, userSuccess }) {
     const[ user, setUser ] = useState({
         name: "",
@@ -40,9 +42,13 @@ function Signup ({ userError, userSuccess }) {
 
 
     function redirectUser(){
-        return success && <Redirect to="/home"></Redirect>
+        return success && <Redirect to="/"></Redirect>
 
     };
+
+    function RegisterMessageSuccess(){
+        return success && window.show("User successfully registered")
+    }
 
 
     function handleInputChange(event) {
@@ -65,16 +71,23 @@ function Signup ({ userError, userSuccess }) {
 
     return (
         <div className="signup_container">
-            <div className='go_back_btn'>
+            {/* <div className='go_back_btn'>
                 <Link to="/">
                     <button to="/" className=''>Go Back</button>
                 </Link>
-            </div>
+            </div> */}
 
             {showError()}
 
             {redirectUser()}
+
+            {RegisterMessageSuccess()}
             <div className='img_container'>
+                <div className='go_back_btn'>
+                    <Link to="/">
+                        <button to="/" className=''>Go Back</button>
+                    </Link>
+                </div>
                 <img src={LoginLogo} alt="login_logo"></img>
             </div>
             <div className='form_container'>
