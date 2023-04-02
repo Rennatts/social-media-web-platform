@@ -98,14 +98,16 @@ function AddPost(){
 
                 <form onSubmit={handleFormSubmit} enctype="multipart/form-data">
                     <div className="form-group_addpost">
-                        <label className="text-muted">Choose images</label>
-                        <input 
-                        onChange={handlefileChange} 
-                        type="file" 
-                        multiple
-                        accept= "image/*"
-                        name="file">
-                        </input>
+                        <label className="file_select">
+                            <input 
+                            onChange={handlefileChange} 
+                            type="file" 
+                            multiple
+                            accept= "image/*"
+                            name="file">
+                            </input>
+                            Select images
+                        </label>
                     </div>
                     
                     <div className="form-group_addpost">

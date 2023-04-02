@@ -34,7 +34,7 @@ function Post({ post }) {
         
         if(post && post.comments){
             setComments(post && post.comments);
-            checkComment();
+            // checkComment();
         }
 
         checkLike(post && post.likes);
@@ -50,11 +50,11 @@ function Post({ post }) {
     };
 
 
-    function checkComment(comments) {
-        if(comments > 0){
-            setComment(true);
-        }
-    };
+    // function checkComment(comments) {
+    //     if(comments > 0){
+    //         setComments(true);
+    //     }
+    // };
 
     function confirmDeletePost(){ 
         let answer = window.confirm("Are you sure you want to delete post?")
@@ -89,8 +89,8 @@ function Post({ post }) {
 
             <div className="bottom_box">    
                 <div className="comments_box">
-                  <FontAwesomeIcon className="comment_icon" icon={faComment} size = '1x'></FontAwesomeIcon>
-                  <p className="comments_link"><h5 className="mr-2">{post && post.comments.length}</h5></p>
+                    <FontAwesomeIcon className="comment_icon" icon={faComment} size = '1x'></FontAwesomeIcon>
+                    <p className="comments_link"><h5 className="mr-2">{post && post.comments.length}</h5></p>
                 </div>
 
                 <div className="likes_box">

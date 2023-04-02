@@ -10,23 +10,24 @@ const Menu = ({ currentUser }) => {
 
     const listenScrollEvent = (event) => {
         if (window.scrollY < 73) {
-          return setHeader("header")
+            return setHeader("header")
+
         } else if (window.scrollY > 70) {
-          return setHeader("header2")
+            return setHeader("header2")
         } 
     }
 
     useEffect(() => {
         window.addEventListener('scroll', listenScrollEvent);
-      
-        return () =>
-          window.removeEventListener('scroll', listenScrollEvent);
+
+        return () => window.removeEventListener('scroll', listenScrollEvent);
+        
     }, []);
 
 
     let history = useHistory();
 
-    console.log(isAuthenticated());
+    console.log("isAuthenticated", isAuthenticated());
 
 
 
@@ -44,8 +45,7 @@ const Menu = ({ currentUser }) => {
                     exact to={"/"}
                     activeStyle={{
                         fontWeight: "bold",
-                        color: "#7B8CDE",
-
+                        color: "#314191",
                     }}
                     className="nav_link_active" 
                     >
@@ -56,7 +56,7 @@ const Menu = ({ currentUser }) => {
                         exact to={"/allusers"}
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#7B8CDE"
+                            color: "#314191"
                         }}
                         className="nav_link_active" 
                         href="#"><i className="fas fa-users"></i>
@@ -68,24 +68,24 @@ const Menu = ({ currentUser }) => {
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#7B8CDE"
+                            color: "#314191"
                         }}
                         href="#"><i className="far fa-plus-square"></i>
                     </NavLink> 
 
-                    {/* <NavLink to="/notifications" className="nav_link_active"
+                    <NavLink to="/notifications" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#7B8CDE"
+                            color: "#314191"
                         }}
                         href="#"><i className="far fa-bell"></i>
-                    </NavLink>  */}
+                    </NavLink> 
 
                     <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
                         className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#7B8CDE"
+                            color: "#314191"
                         }}
                         href="#">
                         My profile
@@ -94,7 +94,7 @@ const Menu = ({ currentUser }) => {
                     <NavLink to={"/#"}
                         activeStyle={{
                             fontWeight: "bold",
-                            color: "#7B8CDE"
+                            color: "#314191"
                         }}
                         className="nav_link_active" 
                         onClick={()=> signout(()=> history.push('/'))}>
