@@ -82,8 +82,9 @@
     padding: 5%;
 } */
 
-.follow_btn{
-    padding: 22%;
+.follow_box .follow_btn{
+    width: 120px;
+    height: 70%;
     background-color: green;
     border-radius: 10px;
     border: none;
@@ -92,13 +93,14 @@
     font-weight: 500;
 }
 
-.follow_btn:hover{
+.follow_box .follow_btn:hover{
     opacity: 0.6;
     color: black;
 }
 
-.unfollow_btn{
-    padding: 22%;
+.follow_box .unfollow_btn{
+    width: 120px;
+    height: 70%;
     background-color: red;
     border-radius: 10px;
     border: none;
@@ -107,7 +109,7 @@
     font-weight: 500;
 }
 
-.unfollow_btn:hover{
+. follow_box .unfollow_btn:hover{
     opacity: 0.6;
     color: black;
 }

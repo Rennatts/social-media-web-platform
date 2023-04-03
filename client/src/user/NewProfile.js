@@ -9,7 +9,6 @@ import {TOGGLE_SUCCESS} from '../redux/types/userTypes';
 import { getPostsByUser } from '../redux/actions/postActions';
 import './css/NewProfile.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import ProfilePostList from './ProfilePostList';
 
 
@@ -31,6 +30,8 @@ function NewProfile({ userSuccess, userError, userPosts, match }) {
     const[following, setFollowing] = useState(false);
     const[isfollowing, setIsfollowing]= useState();
     const[next, setNext]= useState(false);
+    const [isFollowing, setIsFollowing] = useState(false);
+
 
 
     const urlId = (match.params.userId);
@@ -96,11 +97,17 @@ function NewProfile({ userSuccess, userError, userPosts, match }) {
     };
 
 
-    function handleButtonClick(event, user) {
-        event.preventDefault();
-        setUser(user);
-        setFollowing(!following);
+    // function handleButtonClick(event, user) {
+    //     event.preventDefault();
+    //     setUser(user);
+    //     setFollowing(!following);
+    // };
+
+    function handleButtonClick(userData) {
+        setUser(userData);
+        setIsFollowing(!isFollowing);
     };
+    
     
 
     
@@ -151,12 +158,12 @@ function NewProfile({ userSuccess, userError, userPosts, match }) {
                     { checkAuth(userId) ? 
                         (null) : 
                         (<FollowButton 
-                        className="follow_button"
-                        following = {following}
-                        handleButtonClick = {handleButtonClick}
-                        token = {jwt && jwt.token}
-                        followId = {user && user._id}
-                        userId = {jwt && jwt.user._id}
+                            className="follow_button"
+                            following={isFollowing}
+                            handleButtonClick={handleButtonClick}
+                            token={jwt && jwt.token}
+                            followId={user && user._id}
+                            userId={jwt && jwt.user._id}
                         ></FollowButton>)
                     }
                 </div> 
