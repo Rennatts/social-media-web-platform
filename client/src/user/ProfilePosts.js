@@ -8,6 +8,7 @@ import './css/ProfilePosts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import ImageSliderProfile from '../components/ImageSlider/ImageSliderProfile';
+import DefaultProfile from './../../src/images/avatar.png';
 
 
 
@@ -69,7 +70,12 @@ function ProfilePosts({ post }) {
     return (
         <div className="post_box_profile">
             <div className="user_profile_box_profile">
-                <img src={post.postedBy.url} alt={post.postedBy.name}></img>
+                <img
+                    className='img_thumbnail'
+                    src={post.postedBy.url}  
+                    alt= {post.postedBy.name}
+                    onError= {i => (i.target.src= `${DefaultProfile}`)}
+                ></img> 
                 <h5>{post.postedBy.name}</h5>
                 <h8>Followers {post.postedBy.followers.length === 0 ? 0 : post.postedBy.followers.length}</h8>
             </div>
