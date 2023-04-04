@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {isLogged} from './../auth';
 import Comment from './Comment';
@@ -6,12 +6,10 @@ import './css/CommentsList.css';
 
 
 
-function CommentsList({ postId, comments }) {
+function CommentsList({ postId, comments, handleCommentDelete }) {
     const jwt = isLogged();
     const dispatch = useDispatch();
     const[noOfElement, setNoOfElement] = useState(2);
-
-    console.log("-----", comments)
 
     const loadMore = () => {
         setNoOfElement(noOfElement + 2)
@@ -21,10 +19,6 @@ function CommentsList({ postId, comments }) {
         setNoOfElement(noOfElement - noOfElement);
     }
 
-    console.log(noOfElement);
-
-    const userId = jwt.user._id;
-
     const slice = comments.slice(0, noOfElement);
  
     return (
@@ -32,7 +26,12 @@ function CommentsList({ postId, comments }) {
             <div className="comments">
                 {
                     slice.map((item, index) => (
-                        <Comment comment={item} key={index} postId={postId}></Comment>
+                        <Comment 
+                        comment={item} 
+                        key={index} 
+                        postId={postId}
+                        onCommentDelete={handleCommentDelete}
+                        ></Comment>
                     ))
                 }
             </div>

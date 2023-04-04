@@ -82,6 +82,11 @@ function Post({ post }) {
         dispatch(addComments(userId, jwt.token, postId, comment));
     };
 
+    const handleCommentDelete = (deletedComment) => {
+        setComments(comments.filter((item) => item._id !== deletedComment._id));
+    };
+    
+
 
     return (
         <div className="post_box">
@@ -149,8 +154,7 @@ function Post({ post }) {
                 <input onBlur={(event)=> setComment(event.target.value)} className='leave_comment'></input>
                 <button onClick={handleAddComment}>Send</button>
             </div>
-            {/* <Comment></Comment> */}
-            <CommentsList postId={post._id} comments={comments}></CommentsList>
+            <CommentsList handleCommentDelete={handleCommentDelete} postId={post._id} comments={comments}></CommentsList>
         </div>
     )
 

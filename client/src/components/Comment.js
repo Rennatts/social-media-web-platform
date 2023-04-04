@@ -5,20 +5,20 @@ import { deleteComment } from '../redux/actions/postActions';
 import DefaultProfile from './../images/avatar.png';
 import './css/Comment.css';
 
-function Comment({ comment, postId}) {
+function Comment({ comment, postId, onCommentDelete}) {
     const jwt = isLogged();
     const dispatch = useDispatch();
     const date = new Date(comment.created);
 
 
-
-
-    function confirmDeleteComment(){ 
-        let answer = window.confirm("Are you sure you want to delete the comment?")
-        if(answer) {
-            dispatch(deleteComment(jwt.token, jwt.user._id, postId, comment));
+    async function confirmDeleteComment() {
+        let answer = window.confirm("Are you sure you want to delete the comment?");
+        if (answer) {
+            await dispatch(deleteComment(jwt.token, jwt.user._id, postId, comment));
+            onCommentDelete(comment);
         }
-    };
+    }
+    
 
     return (
         <div className="main_comments_container">
