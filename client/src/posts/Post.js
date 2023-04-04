@@ -1,7 +1,8 @@
 import React, {useState, useEffect } from 'react'
 import { isLogged } from './../auth/index';
 import { useDispatch } from 'react-redux';
-import {likeposttwo, unlikeposttwo, deletePost} from '../redux/actions/postActions';
+import {likeposttwo, unlikeposttwo, deletePost, addComment } from '../redux/actions/postActions';
+import {addComments } from './../user/apiUser';
 import CommentsList from '../components/CommentsList';
 import Moment from "react-moment";
 import './css/Post.css';
@@ -16,6 +17,7 @@ import {useHistory} from 'react-router-dom';
 function Post({ post }) {
     const [likes, setLikes] = useState([]);
     const [like, setLike] = useState(false);
+    const [comment, setComment] = useState("");
     const [comments, setComments] = useState([]);
     const history = useHistory();
 
@@ -72,6 +74,13 @@ function Post({ post }) {
             dispatch(deletePost(jwt.token, post._id));
         }
     }
+
+    console.log("comment", comment)
+
+    const handleAddComment = () => {
+        setComments([...comments, comment]);
+        dispatch(addComments(userId, jwt.token, postId, comment));
+    };
 
 
     return (
@@ -135,7 +144,13 @@ function Post({ post }) {
                 </div>
                 }
             </div>
-            <CommentsList postId={post._id} comments={comments && comments}></CommentsList>
+            <div className="comments_box">
+                <FontAwesomeIcon icon={faComment}></FontAwesomeIcon>
+                <input onBlur={(event)=> setComment(event.target.value)} className='leave_comment'></input>
+                <button onClick={handleAddComment}>Send</button>
+            </div>
+            {/* <Comment></Comment> */}
+            <CommentsList postId={post._id} comments={comments}></CommentsList>
         </div>
     )
 

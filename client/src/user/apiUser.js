@@ -136,7 +136,7 @@ export const unlikepost = (userId, token, postId) => {
 
 
 
-export const comment = (userId, token, postId, comment) => {
+export const addComments = (userId, token, postId, comment) => {
     fetch(`http://localhost:5050/posts/post/addcomment`, {
         method: "PUT", 
         headers: {

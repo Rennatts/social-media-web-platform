@@ -254,6 +254,7 @@
 
 .fa-heart{
     color: red;
+    cursor: pointer;
 }
 
 .fa-heart:active{
@@ -397,4 +398,25 @@
 
 .card_text_comment{
     margin-left: 10px;
+}
+
+.leave_comment{
+    border: none;
+    width: 60%;
+    height: 28px;
+    margin-left: 9px;
+}
+
+.comments_box button{
+    background-color: #314191;
+    padding: 7px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.comments_box button:hover{
+    opacity: 0.7;
+
 }

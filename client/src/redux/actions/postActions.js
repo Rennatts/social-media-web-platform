@@ -249,6 +249,7 @@ export const deletePost = (token, postId) => {
 
 
 export const addComment= (token, userId, postId, text) => {
+    console.log("token", token)
     const config= {
         headers: {
             Authorization: `Bearer ${token}`
@@ -270,6 +271,7 @@ export const addComment= (token, userId, postId, text) => {
     };    
     
 };
+
 
 
 

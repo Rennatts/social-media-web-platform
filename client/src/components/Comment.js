@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { isLogged } from './../auth';
 import { deleteComment } from '../redux/actions/postActions';
+import DefaultProfile from './../images/avatar.png';
 import './css/Comment.css';
 
 function Comment({ comment, postId}) {
@@ -9,14 +10,13 @@ function Comment({ comment, postId}) {
     const dispatch = useDispatch();
     const date = new Date(comment.created);
 
-    const postedBy = comment.postedBy._id;
-    const userId = jwt.user._id;
 
 
-    function confirDeleteComment(){ 
+
+    function confirmDeleteComment(){ 
         let answer = window.confirm("Are you sure you want to delete the comment?")
         if(answer) {
-            dispatch(deleteComment(jwt.token, userId, postId, comment));
+            dispatch(deleteComment(jwt.token, jwt.user._id, postId, comment));
         }
     };
 
@@ -28,6 +28,7 @@ function Comment({ comment, postId}) {
                         className= "img_profile_comment"
                         src={comment.postedBy.url} 
                         alt= {comment.postedBy.name}
+                        onError= {i => (i.target.src= `${DefaultProfile}`)}
                     ></img>
                     
                     <h5 className="name_comment">
@@ -41,7 +42,7 @@ function Comment({ comment, postId}) {
 
                 {comment.postedBy._id === jwt.user._id && 
                     <div className="col-12">
-                        <i onClick={confirDeleteComment}
+                        <i onClick={confirmDeleteComment}
                         className="fa fa-trash bts btn-danger ml-auto"></i>
                     </div>
                 }

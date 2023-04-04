@@ -11,6 +11,8 @@ function CommentsList({ postId, comments }) {
     const dispatch = useDispatch();
     const[noOfElement, setNoOfElement] = useState(2);
 
+    console.log("-----", comments)
+
     const loadMore = () => {
         setNoOfElement(noOfElement + 2)
     }
