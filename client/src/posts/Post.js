@@ -50,11 +50,21 @@ function Post({ post }) {
     };
 
 
-    // function checkComment(comments) {
-    //     if(comments > 0){
-    //         setComments(true);
-    //     }
-    // };
+    const handleLike = () => {
+        if (!like) {
+            setLike(true);
+            setLikes([...likes, userId]);
+            dispatch(likeposttwo(userId, token, postId));
+        }
+    };
+    
+    const handleUnlike = () => {
+        if (like) {
+            setLike(false);
+            setLikes(likes.filter(id => id !== userId));
+            dispatch(unlikeposttwo(userId, token, postId));
+        }
+    };
 
     function confirmDeletePost(){ 
         let answer = window.confirm("Are you sure you want to delete post?")
@@ -101,7 +111,7 @@ function Post({ post }) {
                             {" "}
                             {likes? likes.length: 0}{" "}
                         </span>
-                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
+                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={handleUnlike} 
                         className="fa-heart">
                         </FontAwesomeIcon>
                         </h5>
@@ -111,7 +121,7 @@ function Post({ post }) {
                             {" "}
                             {likes? likes.length: 0}{" "}
                         </span>
-                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(likeposttwo(userId, token, postId))}
+                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={handleLike}
                         className="fa-heart" >
                         </FontAwesomeIcon>
                         </h5>
