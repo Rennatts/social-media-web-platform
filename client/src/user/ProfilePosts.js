@@ -8,6 +8,7 @@ import './css/ProfilePosts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import ImageSliderProfile from '../components/ImageSlider/ImageSliderProfile';
+import ImageSlider from '../components/ImageSlider/ImageSlider';
 import DefaultProfile from './../../src/images/avatar.png';
 
 
@@ -89,7 +90,9 @@ function ProfilePosts({ post }) {
                 </div>
             </div>
 
-            <ImageSliderProfile image={post.url}></ImageSliderProfile>
+            <div className='image_slider_box'>
+                <ImageSliderProfile image={post.url}></ImageSliderProfile>
+            </div>
 
             <div className="bottom_box">  
                 <div className="comments_box_profile">

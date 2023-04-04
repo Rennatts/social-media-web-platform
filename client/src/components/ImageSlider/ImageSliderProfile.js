@@ -36,7 +36,7 @@ function ImageSliderProfile({ image }) {
                     return(
                     <div className={index === current ? 'slider_profile:active' : 'slider_profile'} key={index}>
                         {index === current && (
-                        <img src={slide} alt={slide} className="image_profile" id="image_profile"></img>
+                        <img src={slide} alt={slide} id="image_profile"></img>
                         )}
                     </div>
                     )

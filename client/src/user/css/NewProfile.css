@@ -30,7 +30,6 @@
 }
 
 
-
 .img_thumbnail{
     height: 12%;
     width: 12%;
@@ -77,10 +76,6 @@
     padding: 5%;
 }
 
-/* 
-.follow_box{
-    padding: 5%;
-} */
 
 .follow_box .follow_btn{
     width: 120px;
