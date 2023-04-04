@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from 'react';
 import { useDispatch, connect } from 'react-redux'; 
 import { isLogged } from './../../auth';
 import { getFollowingPosts } from '../../redux/actions/postActions';
-import PostList from './../PostList';
+import PostList from './../../components/PostList';
 
 
 function UserHome({ feedPosts }) {
@@ -27,8 +27,6 @@ function UserHome({ feedPosts }) {
  
     return (
         <div className="jubotron">
-
-
             <div className="post_container">
                <PostList posts={feedPosts}></PostList>
             </div>

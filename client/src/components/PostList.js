@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch } from 'react-redux'; 
-import { isLogged } from './auth';
-import Post from '../Core/Post';
+import { isLogged } from './../auth/index';
+import Post from './../posts/Post';
 
 function PostList({posts, socket}) {
 

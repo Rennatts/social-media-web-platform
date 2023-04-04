@@ -52,6 +52,17 @@ const Menu = ({ currentUser }) => {
                         <i className="fas fa-home"></i>
                     </NavLink>
 
+                    <NavLink
+                    exact to={"/feed"}
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "#314191",
+                    }}
+                    className="nav_link_active" 
+                    >
+                        <i className="fa-thin fa-sliders"></i>
+                    </NavLink>
+
                     <NavLink 
                         exact to={"/allusers"}
                         activeStyle={{

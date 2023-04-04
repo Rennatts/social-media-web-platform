@@ -36,7 +36,7 @@ function ImageSlider({ image }) {
                     return(
                     <div key={index}>
                         {index === current && (
-                        <img src={slide} alt={slide} className="image" id="image"></img>
+                        <img src={slide} alt={slide} id="image"></img>
                         )}
                     </div>
                     )

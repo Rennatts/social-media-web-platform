@@ -1,6 +1,7 @@
 import React from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Home from './Core/Home';
+import UserHome from './Core/Feed/UserHome';
 import Signup from './user/Signup';
 import Signin from './user/Signin';
 import Menu from './Core/Menu';
@@ -29,6 +30,7 @@ function MainRouter({ currentUser }){
                 <Menu currentUser={ currentUser && currentUser }></Menu>
                 <Switch>
                     <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/feed" component={UserHome}></Route>
                     <Route exact path="/signup" component={Signup}></Route>
                     <Route exact path="/signin" component={Signin}></Route>
                     <PrivateRoute exact path="/user/:userId" component={NewProfile}></PrivateRoute>
@@ -56,3 +58,4 @@ const mapStateToProps = ( {user: {currentUser}} ) => ({
 })
 
 export default connect(mapStateToProps, null )(MainRouter);
+
