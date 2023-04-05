@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import { isLogged } from './../auth/index';
 import { useDispatch } from 'react-redux';
-import {likeposttwo, unlikeposttwo, deletePost, addComment } from '../redux/actions/postActions';
+import {likeposttwo, unlikeposttwo, deletePost, addComment, getPost } from '../redux/actions/postActions';
 import {addComments } from './../user/apiUser';
 import CommentsList from '../components/CommentsList';
 import Moment from "react-moment";
@@ -11,6 +11,8 @@ import { faComment, faHeart, faEdit, faTrash } from "@fortawesome/free-solid-svg
 import ImageSlider from '../components/ImageSlider';
 import DefaultProfile from './../images/avatar.png';
 import {useHistory} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 
 
@@ -29,6 +31,7 @@ function Post({ post }) {
     const token = jwt.token;
     const userId = jwt.user._id;
 
+
     
     useEffect(() => {
 
@@ -41,6 +44,8 @@ function Post({ post }) {
 
         checkLike(post && post.likes);
     }, [post && post.likes, post && post.comments]);  
+    
+
 
 
 
@@ -75,12 +80,15 @@ function Post({ post }) {
         }
     }
 
-    console.log("comment", comment)
 
-    const handleAddComment = () => {
-        setComments([...comments, comment]);
-        dispatch(addComments(userId, jwt.token, postId, comment));
+    const handleAddComment = async () => {
+        const newComment = await dispatch(addComment(jwt.token, userId, postId, comment));
+        if (newComment) {
+            setComments(newComment);
+        }
     };
+    
+
 
     const handleCommentDelete = (deletedComment) => {
         setComments(comments.filter((item) => item._id !== deletedComment._id));
@@ -114,7 +122,7 @@ function Post({ post }) {
             <div className="bottom_box">    
                 <div className="comments_box">
                     <FontAwesomeIcon className="comment_icon" icon={faComment} size = '1x'></FontAwesomeIcon>
-                    <p className="comments_link"><h5 className="mr-2">{post && post.comments.length}</h5></p>
+                    <div className="comments_link"><h5 className="mr-2">{post && post.comments.length}</h5></div>
                 </div>
 
                 <div className="likes_box">

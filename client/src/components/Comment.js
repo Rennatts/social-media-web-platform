@@ -18,6 +18,8 @@ function Comment({ comment, postId, onCommentDelete}) {
             onCommentDelete(comment);
         }
     }
+
+    console.log("=====", comment)
     
 
     return (
@@ -26,7 +28,7 @@ function Comment({ comment, postId, onCommentDelete}) {
                 <div className="comment_basicinfo">
                     <img 
                         className= "img_profile_comment"
-                        src={comment.postedBy.url} 
+                        // src={comment.postedBy.url} 
                         alt= {comment.postedBy.name}
                         onError= {i => (i.target.src= `${DefaultProfile}`)}
                     ></img>

@@ -2,7 +2,8 @@ const Post = require('./../../schema/post');
 
 
 module.exports = (req, res) => {
-    let comment = {text: req.body.comment};
+    console.log("---", req.body, "---")
+    let comment = {text: req.body.text};
     comment.postedBy = req.body.userId;
 
     Post.findByIdAndUpdate(

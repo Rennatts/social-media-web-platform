@@ -248,28 +248,87 @@ export const deletePost = (token, postId) => {
 
 
 
-export const addComment= (token, userId, postId, text) => {
-    console.log("token", token)
-    const config= {
-        headers: {
-            Authorization: `Bearer ${token}`
-        },
-    }
-    return (dispatch) => {
-        axios
-        .put(`http://localhost:5050/posts/post/addcomment`, { userId, postId, text}, config)
-        .then((res) => {
-            dispatch({
-                type: ADD_DELETE_COMMENT,
-                payload: res.data,
-                userId,
-            });
-            dispatch(getAllPosts(token));
+// export const addComment= (token, userId, postId, text) => {
+//     console.log("token", token)
+//     const config= {
+//         headers: {
+//             Authorization: `Bearer ${token}`
+//         },
+//     }
+//     return (dispatch) => {
+//         axios
+//         .put(`http://localhost:5050/posts/post/addcomment`, { userId, postId, text}, config)
+//         .then((res) => {
+//             dispatch({
+//                 type: ADD_DELETE_COMMENT,
+//                 payload: res.data,
+//                 userId,
+//             });
+//             dispatch(getAllPosts(token));
             
-        })
-        .catch((err) => console.log(err))
-    };    
+//         })
+//         .catch((err) => console.log(err))
+//     };    
     
+// };
+
+
+// export const addComment = (token, userId, postId, text) => {
+//     return async (dispatch) => {
+//       try {
+//         const response = await fetch(`http://localhost:5050/posts/post/addcomment`, {
+//           method: "PUT",
+//           headers: {
+//             'Content-Type': 'application/json',
+//             Authorization: `Bearer ${token}`,
+//           },
+//           body: JSON.stringify({ userId, postId, text })
+//         });
+  
+//         const data = await response.json();
+  
+//         dispatch({
+//           type: ADD_DELETE_COMMENT,
+//           payload: data,
+//           userId,
+//         });
+  
+//         dispatch(getAllPosts(token));
+//       } catch (err) {
+//         console.log(err);
+//       }
+//     };
+// };
+
+
+
+export const addComment = (token, userId, postId, text) => {
+    return async (dispatch) => {
+      try {
+        const response = await fetch(`http://localhost:5050/posts/post/addcomment`, {
+          method: "PUT",
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ userId, postId, text })
+        });
+  
+        const data = await response.json();
+  
+        dispatch({
+          type: ADD_DELETE_COMMENT,
+          payload: data,
+          userId,
+        });
+  
+        dispatch(getAllPosts(token));
+
+        return data.comments;
+      } catch (err) {
+        console.log(err);
+      }
+    };
 };
 
 
@@ -409,22 +468,6 @@ export const getPost = ( token, postId ) => {
 };
 
 
-export const getPostsSameProduct = (token) => {
-
-
-return (dispatch) => {
-    axios
-    .get("http://localhost:5050/posts/productpage",)
-    .then((res) => {
-        dispatch({
-            type: GET_POSTS_BY_PRODUCTS,
-            payload: res.data
-        });
-    })
-    .catch((err) => console.log(err));
-};
-};
-
 
 
 
@@ -450,137 +493,7 @@ export const getFollowingPosts = (token, userId) => {
 
 
 
-export const getSamePosts = (token, postId) => {
-    const config = {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    };
-    return (dispatch) => {
-        axios
-        .get(`http://localhost:5050/posts/product_page/${postId}`, config)
-        .then((res) => {
-            dispatch({
-                type: GET_SAME_POSTS,
-                payload: res.data
-            });
-        })
-        .catch((err) => console.log(err));
-    };
-};
 
-
-
-
-export const getCompanyWithSamePost = (token, postId) => {
-    const config = {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        }
-    };
-    return axios.get(`http://localhost:5050/posts/productpage/${postId}`, config)
-        .then((res) => {
-            if (res.data.error) {
-                return {error: res.data.error };
-            } else {
-              return {data: res.data};  
-            }
-        })
-        .catch((err) => console.log(err));
-};
-
-
-
-
-export const getCompanyWithRating = (token, postId) => {
-    const config = {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        }
-    };
-    return axios.get(`http://localhost:5050/posts/company/${postId}`, config)
-        .then((res) => {
-            if (res.data.error) {
-                return {error: res.data.error };
-            } else {
-              return {data: res.data};  
-            }
-        })
-        .catch((err) => console.log(err));
-};
-
-
-
-
-export const groupPostsbyBrandAndProductname = (token,) => {
-    const config = {
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    };
-    return (dispatch) => {
-        axios
-        .get(`http://localhost:5050/posts/groupposts`, config)
-        .then((res) => {
-            console.log(res);
-            dispatch({
-                type: GROUP_POSTS,
-                payload: res.data
-            });
-        })
-        .catch((err) => console.log(err));
-    };
-};
-
-
-
-export const searchPostsByBrandAndProductname = (token, searchBrandInput, searchProductnameInput) => async dispatch => {
-    try{
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                 Authorization: `Bearer ${token}`
-            }
-        };
-
-        const body = JSON.stringify({searchBrandInput, searchProductnameInput});
-
-        const res = await axios.put(`http://localhost:5050/posts/search_products`, body, config);
-
-        dispatch({ type: SEARCH_TOPICS, payload: res.data});
-    } catch(error) {
-        dispatch({
-            type: POST_ERROR,
-            payload: error,
-        });
-    }
-};
-
-
-
-
-
-export const searchPostsByBrand = (token, searchBrandInput) => async dispatch => {
-    try{
-        const config = {
-            headers: {
-                'Content-Type': 'application/json',
-                 Authorization: `Bearer ${token}`
-            }
-        };
-
-        const body = JSON.stringify({searchBrandInput});
-
-        const res = await axios.put(`http://localhost:5050/posts/search_posts_by_brand`, body, config);
-
-        dispatch({ type: SEARCH_TOPICS, payload: res.data});
-    } catch(error) {
-        dispatch({
-            type: POST_ERROR,
-            payload: error,
-        });
-    }
-};
 
 
 

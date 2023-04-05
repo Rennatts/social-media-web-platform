@@ -20,9 +20,11 @@ function CommentsList({ postId, comments, handleCommentDelete }) {
     }
 
     const slice = comments.slice(0, noOfElement);
+
+    console.log("hahahah", comments)
  
     return (
-        <div classList="comments_list">
+        <div className="comments_list">
             <div className="comments">
                 {
                     slice.map((item, index) => (
@@ -38,8 +40,8 @@ function CommentsList({ postId, comments, handleCommentDelete }) {
 
             {comments.length > 2 ? 
             (<div className="comments_buttons">
-                <button class="show_hide_comments" onClick={() => loadMore()}>Load More Comments</button>
-                <button class="show_hide_comments" onClick={() => close()}>Close Comments</button>
+                <button className="show_hide_comments" onClick={() => loadMore()}>Load More Comments</button>
+                <button className="show_hide_comments" onClick={() => close()}>Close Comments</button>
             </div>) 
             : (null)
             }
