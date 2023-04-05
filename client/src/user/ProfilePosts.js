@@ -82,12 +82,10 @@ function ProfilePosts({ post }) {
             </div>
 
             <div className="post_box_info_profile">
-                <div className="product_brand_profile">
-                    <div className="date_box_profile">
-                       <Moment className="date" format="HH:mm YYYY-MM-DD">{post.created}</Moment>
-                    </div>
-                    <p>{post.body}</p>
+                <div className="date_box_profile">
+                    <Moment className="date" format="HH:mm YYYY-MM-DD">{post.created}</Moment>
                 </div>
+                <p>{post.body}</p>
             </div>
 
             <div className='image_slider_box'>
