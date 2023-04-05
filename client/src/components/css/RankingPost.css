@@ -7,16 +7,23 @@
     flex-wrap: wrap;
 }
 
+.most_liked_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
 
 .post_box_ranking{
-    border-style: groove;
-    border-color: #71c4c7;
+    border: 2px solid #71c4c7;
     border-radius: 17px;
     color: black;
     width: 400px;
-    height: 400px;
-    padding: 30px 0;
-    margin: 12px;
+    height: 460px;
+    padding: 40px 0;
+    margin-top: 82px;
+    margin-left: 22px;
 
 }
 
@@ -26,11 +33,19 @@
     align-items: center;
     flex-direction: row;
     margin-top: -22px;
+    margin-left: 10px;
+}
+
+.body_box_ranking{
+    margin-top: 6%;
+    margin-left: 4%;
 }
 
 .post_box_info_ranking{
-    margin-left: 12%;
+    margin: 5%;
 }
+
+
 .user_profile_box_ranking h5{
     margin-right: 4%;
 }
@@ -70,7 +85,7 @@
 .bottom_box_ranking{
     display: flex;
     justify-content: center;
-    margin-top: 3px;
+    margin-top: 44px;
     height: 30px;
 }
 

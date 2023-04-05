@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, withRouter, useHistory } from 'react-router-dom';
 import { isAuthenticated, signout, brandSignout  } from './../auth/index';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Menu.css';
 
 
@@ -53,14 +54,36 @@ const Menu = ({ currentUser }) => {
                     </NavLink>
 
                     <NavLink
-                    exact to={"/feed"}
+                    exact to={`/posts/feed/${isAuthenticated().user._id}`}
                     activeStyle={{
                         fontWeight: "bold",
                         color: "#314191",
                     }}
                     className="nav_link_active" 
                     >
-                        <i className="fa-thin fa-sliders"></i>
+                        <i className="fas fa-sliders"></i>
+                    </NavLink>
+
+                    <NavLink
+                    exact to={"/trading/most_liked"}
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "#314191",
+                    }}
+                    className="nav_link_active" 
+                    >
+                        <i style={{color: "black"}}className="fas fa-heart"></i>
+                    </NavLink>
+
+                    <NavLink
+                    exact to={"/trading/most_commented"}
+                    activeStyle={{
+                        fontWeight: "bold",
+                        color: "#314191",
+                    }}
+                    className="nav_link_active" 
+                    >
+                        <i style={{color: "black"}} className="fas fa-comment"></i>
                     </NavLink>
 
                     <NavLink 
@@ -84,13 +107,13 @@ const Menu = ({ currentUser }) => {
                         href="#"><i className="far fa-plus-square"></i>
                     </NavLink> 
 
-                    <NavLink to="/notifications" className="nav_link_active"
+                    {/* <NavLink to="/notifications" className="nav_link_active"
                         activeStyle={{
                             fontWeight: "bold",
                             color: "#314191"
                         }}
                         href="#"><i className="far fa-bell"></i>
-                    </NavLink> 
+                    </NavLink>  */}
 
                     <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
                         className="nav_link_active"

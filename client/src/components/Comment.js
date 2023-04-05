@@ -26,12 +26,19 @@ function Comment({ comment, postId, onCommentDelete}) {
         <div className="main_comments_container">
             <div className="comments_header">
                 <div className="comment_basicinfo">
-                    <img 
+                    {
+                    comment.postedBy.url !== "http://localhost:3000/files/undefined" ? 
+                    (<img 
                         className= "img_profile_comment"
-                        // src={comment.postedBy.url} 
+                        src={comment.postedBy.url} 
                         alt= {comment.postedBy.name}
-                        onError= {i => (i.target.src= `${DefaultProfile}`)}
-                    ></img>
+                    ></img>) : 
+                    (<img 
+                        className= "img_profile_comment"
+                        src={DefaultProfile} 
+                        alt= "DefaultProfile"
+                    ></img>)
+                    }
                     
                     <h5 className="name_comment">
                         {comment.postedBy.name}

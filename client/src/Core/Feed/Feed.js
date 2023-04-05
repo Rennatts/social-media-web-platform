@@ -12,6 +12,8 @@ function Feed({ feedPosts }) {
     const token = jwt.token;
     const userId = jwt.user._id;
 
+    console.log("feedPosts", feedPosts)
+
     useEffect(() => {
         if(jwt) {
             function loadFollowingPosts() {

@@ -85,6 +85,7 @@ function Post({ post }) {
         const newComment = await dispatch(addComment(jwt.token, userId, postId, comment));
         if (newComment) {
             setComments(newComment);
+            setComment("");
         }
     };
     
@@ -93,18 +94,26 @@ function Post({ post }) {
     const handleCommentDelete = (deletedComment) => {
         setComments(comments.filter((item) => item._id !== deletedComment._id));
     };
-    
+
 
 
     return (
         <div className="post_box">
             <div className='user_profile_box'>
                 <div className='photo_name_box'>
-                    <img 
-                        src={post.postedBy.url} 
-                        alt= {post.postedBy.name}
-                        onError= {i => (i.target.src= `${DefaultProfile}`)}
-                    ></img>
+                    {
+                    comment.postedBy?.url ? 
+                    (<img
+                        className="img_profile_comment"
+                        src={comment.postedBy?.url}
+                        alt={comment.postedBy?.name}
+                    ></img>) : 
+                    (<img
+                        className="img_profile_comment"
+                        src={DefaultProfile}
+                        alt="DefaultProfile"
+                    ></img>)
+                    }
                     <h2>{post && post.postedBy.name}</h2>
                 </div>
                 <div className='date_box'>
@@ -159,7 +168,7 @@ function Post({ post }) {
             </div>
             <div className="comments_box">
                 <FontAwesomeIcon icon={faComment}></FontAwesomeIcon>
-                <input onBlur={(event)=> setComment(event.target.value)} className='leave_comment'></input>
+                <input value={comment} onChange={(event)=> setComment(event.target.value)} className='leave_comment'></input>
                 <button onClick={handleAddComment}>Send</button>
             </div>
             <CommentsList handleCommentDelete={handleCommentDelete} postId={post._id} comments={comments}></CommentsList>

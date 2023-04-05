@@ -1,8 +1,13 @@
+.search_posts_container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
 .search_posts{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 12%;
 }
 
 .search_input_posts{
@@ -13,7 +18,8 @@
     text-decoration: none;
     font-size: 16px;
     border: none;
-    background-color: #e4e7eb;
+    border-radius: 10px;
+    background-color: #ddddd;
 }
 
 .search_posts input:focus{

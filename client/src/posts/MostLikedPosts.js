@@ -23,7 +23,10 @@ function MostLikedPosts({onChange, dataFromSearch, posts}) {
 
     return (
         <div>
-            <RankingComponent onChange={onChange} dataFromSearch={dataFromSearch}></RankingComponent>
+            <div className="most_liked_header">
+               <h1>Most liked posts</h1>
+            </div>
+            {/* <RankingComponent onChange={onChange} dataFromSearch={dataFromSearch}></RankingComponent> */}
 
             <div className="post_container_ranking">
                 {posts.map((item, i) => {

@@ -25,15 +25,17 @@ function PostList({posts}) {
 
     return (
         <div>
-            <form className="search_posts">
-                <SearchIcon className="search_icon_posts"></SearchIcon> 
-                <input className="search_input_posts"
-                    placeholder="Search..."
-                    value={dataFromSearch}
-                    onChange={onChange}
-                    type="search"
-                />
-            </form>
+            <div className="search_posts_container">
+                <form className="search_posts">
+                    <SearchIcon className="search_icon_posts"></SearchIcon> 
+                    <input className="search_input_posts"
+                        placeholder="Search..."
+                        value={dataFromSearch}
+                        onChange={onChange}
+                        type="search"
+                    />
+                </form>
+            </div>
             
             <div>
                 {filteredData.map((item, i)=> {

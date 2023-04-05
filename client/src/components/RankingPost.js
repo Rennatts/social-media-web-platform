@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import ImageSlider from './ImageSlider/ImageSlider';
-//import DefaultProfile from './../images/avatar';
+import DefaultProfile from './../images/avatar.png';
 import {useHistory} from 'react-router-dom';
 import './css/RankingPost.css';
 
@@ -17,7 +17,6 @@ function RankingPost({ post }) {
     const [like, setLike] = useState(false);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState(false);
-    const [fullproduct, setFullproduct]= useState();
     const [currentImage, setCurrentImage] = useState(0);
     const [length, setLength] = useState();
 
@@ -64,34 +63,25 @@ function RankingPost({ post }) {
     return (
         <div className="post_box_ranking">
             <div className="user_profile_box_ranking">
-                {/* <img 
+                <img 
                 src={post && post.postedBy.url} 
                 alt={post && post.postedBy.name}
-                onError ={i => (i => i.target.src = `${DefaultProfile}`)}
-                ></img> */}
+                onError= {i => (i.target.src= `${DefaultProfile}`)}
+                ></img>
                 <h5>{post && post.postedBy.name}</h5>
                 <h8>Followers {post && post.postedBy.followers.length}</h8>
 
-                <div className="post_box_info_ranking">
-                    <div className="date_box_ranking">
-                        <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
-                    </div>
-                </div>
-
+            </div>
+            
+            <div className="post_box_info_ranking">
+                <Moment className="date" format="HH:mm YYYY-MM-DD">{post && post.created}</Moment>
             </div>
 
             <ImageSlider image={post && post.url}></ImageSlider>
 
-            <div className="product_brand_ranking">
-                <h5>Procuct: {post && post.productname}</h5>
-                <h5>Brand: {post && post.brand}</h5>
-                <h5>Category: {post && post.category}</h5>
-            </div>
-
-            <div cassName="img_container_ranking">
-                <div className="body_box_ranking">
-                    <p><h10 className="username_ranking">{post && post.postedBy.name} </h10>{post && post.body}</p>
-                </div>
+            <div className="body_box_ranking">
+                <p className="username_ranking">{post && post.postedBy.name} </p>
+                <p>{post && post.body}</p>
             </div> 
 
             <div className="bottom_box_ranking">    

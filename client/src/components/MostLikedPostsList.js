@@ -1,5 +1,6 @@
 import React from 'react';
 import MostLikedPostsListFinal from './MostLikedPostsListFinal';
+import Post from './../posts/Post';
 
 const PostList = ({
     posts,
@@ -7,9 +8,8 @@ const PostList = ({
     posts !== null &&
     posts.length > 0 &&
     posts.map((post) => (
-      <MostLikedPostsListFinal
+      <Post
         post={post}
-        key={post._id}
       />
     ));
   
