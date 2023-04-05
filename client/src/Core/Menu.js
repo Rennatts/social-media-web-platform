@@ -107,14 +107,6 @@ const Menu = ({ currentUser }) => {
                         href="#"><i className="far fa-plus-square"></i>
                     </NavLink> 
 
-                    {/* <NavLink to="/notifications" className="nav_link_active"
-                        activeStyle={{
-                            fontWeight: "bold",
-                            color: "#314191"
-                        }}
-                        href="#"><i className="far fa-bell"></i>
-                    </NavLink>  */}
-
                     <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
                         className="nav_link_active"
                         activeStyle={{
@@ -122,7 +114,7 @@ const Menu = ({ currentUser }) => {
                             color: "#314191"
                         }}
                         href="#">
-                        My profile
+                        Profile
                     </NavLink> 
 
                     <NavLink to={"/#"}
@@ -132,7 +124,7 @@ const Menu = ({ currentUser }) => {
                         }}
                         className="nav_link_active" 
                         onClick={()=> signout(()=> history.push('/'))}>
-                            Logout
+                            LogOut
                     </NavLink>
                 </div>
                 </>

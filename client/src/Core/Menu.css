@@ -127,7 +127,8 @@
 .nav_link_active{
     color: black;
     text-decoration: none;
-    padding: 18px;
+    padding: 16px;
+    width: 80px;
 }
 
 .nav_link_active::hover{
@@ -144,6 +145,3 @@
 }
 
 
-.nav_link_active i{
-    padding-right: 4px;
-}

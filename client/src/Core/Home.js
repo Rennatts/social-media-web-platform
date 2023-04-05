@@ -66,44 +66,6 @@ function Home({ userError, userSuccess }) {
     return (
         <>
             {!isAuthenticated() ? (<Signin/>) : (<AllPosts/>)}
-            {/* <div className='img_container'>
-                <img src={LoginLogo} alt="login_logo"></img>
-            </div>
-            <div className='form_container'>
-                <form className='form'> 
-                    <div className="form-group">
-                        <label className="text-muted">Email</label>
-                        <input 
-                        onChange={(event)=> handleInputChange(event)} 
-                        type="email" 
-                        name= "email"
-                        required
-                        className="form-control"
-                        value={email}></input>
-                    </div>
-
-                    <div className="form-group">
-                        <label className="text-muted">Password</label>
-                        <input 
-                        onChange={(event)=> handleInputChange(event)} 
-                        type="password" 
-                        name= "password"
-                        required
-                        className="form-control"
-                        value={password}></input>
-                    </div>
-
-                    <button onClick={handleFormSubmit} className="btn">Submit</button>
-
-                    <div className="form-group">
-                        <div class="forgot_password">Forgot Password?</div>
-
-                        <div className="signup_link">Not a member?
-                            <Link to="/signup" classNmae="signup"> Singup</Link>
-                        </div>.
-                    </div>
-                </form>
-            </div> */}
         </>
     )
 
