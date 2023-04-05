@@ -25,6 +25,9 @@ function Feed({ feedPosts }) {
  
     return (
         <div className="post_container">
+            <div className="most_liked_header">
+               <h1>Following posts</h1>
+            </div>
             <div>
                 {feedPosts.map((item, i) => {
                     return <Post post={item} key={item._id}></Post>

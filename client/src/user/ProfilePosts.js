@@ -83,10 +83,10 @@ function ProfilePosts({ post }) {
 
             <div className="post_box_info_profile">
                 <div className="product_brand_profile">
-                    <h5>{post.title}</h5>
                     <div className="date_box_profile">
                        <Moment className="date" format="HH:mm YYYY-MM-DD">{post.created}</Moment>
                     </div>
+                    <p>{post.body}</p>
                 </div>
             </div>
 
