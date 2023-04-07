@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { isLogged } from './../auth/index';
 import { useDispatch } from 'react-redux';
-import {likeposttwo, unlikeposttwo, deletePost} from './../redux/actions/postActions';
+import {likeposttwo, unlikeposttwo, deletePost } from './../redux/actions/postActions';
 import Moment from "react-moment";
-import { Link } from 'react-router-dom';
 import './css/ProfilePosts.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment, faHeart } from "@fortawesome/free-solid-svg-icons";
 import ImageSliderProfile from '../components/ImageSlider/ImageSliderProfile';
-import ImageSlider from '../components/ImageSlider/ImageSlider';
 import DefaultProfile from './../../src/images/avatar.png';
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -57,12 +56,11 @@ function ProfilePosts({ post }) {
         }
     };
 
-    function confirDeletePost(){ 
+    function confirmDeletePost(){ 
         let answer = window.confirm("Are you sure you want to delete post?")
         if(answer) {
             dispatch(deletePost(jwt.token, post._id));
         }
-        
     }
 
     console.log(post);
@@ -123,6 +121,12 @@ function ProfilePosts({ post }) {
                     )
                     }   
                 </div>
+                {post.postedBy._id === jwt.user._id && 
+                    <div className="post_edit">
+                        <FontAwesomeIcon icon={faTrash} className="trash_icon_post" onClick={confirmDeletePost}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faEdit} className="edit_icon_post"></FontAwesomeIcon>
+                    </div>
+                }
             </div>
 
         </div>

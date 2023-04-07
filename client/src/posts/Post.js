@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react'
 import { isLogged } from './../auth/index';
 import { useDispatch } from 'react-redux';
-import {likeposttwo, unlikeposttwo, deletePost, addComment, getPost } from '../redux/actions/postActions';
+import {likeposttwo, unlikeposttwo, deletePost, addComment } from '../redux/actions/postActions';
 import {addComments } from './../user/apiUser';
 import CommentsList from '../components/CommentsList';
 import Moment from "react-moment";
@@ -160,10 +160,10 @@ function Post({ post }) {
                     }   
                 </div>
                 {post.postedBy._id === jwt.user._id && 
-                <div className="post_edit">
-                    <FontAwesomeIcon icon={faTrash} className="trash_icon_post" onClick={confirmDeletePost}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faEdit} className="edit_icon_post"></FontAwesomeIcon>
-                </div>
+                    <div className="post_edit">
+                        <FontAwesomeIcon icon={faTrash} className="trash_icon_post" onClick={confirmDeletePost}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faEdit} className="edit_icon_post"></FontAwesomeIcon>
+                    </div>
                 }
             </div>
             <div className="comments_box">
