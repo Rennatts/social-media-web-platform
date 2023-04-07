@@ -12,7 +12,7 @@ let PostSchema = mongoose.Schema({
     body: {
         type: String,
         required: true,
-        minLength: 4,
+        minLength: 1,
         maxlength: 2000
     },
     postedBy: {

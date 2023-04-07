@@ -4,7 +4,7 @@ exports.createPostValidator = (req, res, next) => {
 
     req.check("body", "write a body").notEmpty();
     req.check("body", "body must be between 4 to 2000").isLength({
-        min: 4,
+        min: 1,
         max: 2000
     });
 

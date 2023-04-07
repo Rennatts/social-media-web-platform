@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { isLogged } from './../auth/index';
 import { useDispatch } from 'react-redux'; 
 import { addPost } from '../redux/actions/postActions';
-import { Redirect } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import './css/AddPost.css';
 
 
@@ -16,6 +16,8 @@ function AddPost(){
     const [loading, setLoading] = useState(false);
     const [redirect, setRedirect]= useState(false);
     const [categorySelected, setCategorySelected] = useState();
+
+    const history = useHistory();
 
 
     const jwt = isLogged();
@@ -68,28 +70,61 @@ function AddPost(){
     }
 
 
-    function handleFormSubmit(event){
-        event.preventDefault();
+    // function handleFormSubmit(event){
+    //     event.preventDefault();
 
-        const userId = jwt.user._id;
-        const token = jwt.token;
-        const postData = new FormData();
+    //     const userId = jwt.user._id;
+    //     const token = jwt.token;
+    //     const postData = new FormData();
 
-        post.body && postData.append("body", post.body);
+    //     post.body && postData.append("body", post.body);
 
-        for(let i= 0; i < post.file.length; i++) {
-            post.file[i] && postData.append('file', post.file[i])
-        };
+    //     for(let i= 0; i < post.file.length; i++) {
+    //         post.file[i] && postData.append('file', post.file[i])
+    //     };
         
 
-        dispatch(addPost(token, userId, postData));
-        setPost({...post, body: "", file: []});
-        setRedirect(true);
-        if (redirect){
-            return <Redirect to="/" ></Redirect>
-        };
-        setLoading(false);
-    };
+    //     dispatch(addPost(token, userId, postData));
+    //     setPost({...post, body: "", file: []});
+    //     setRedirect(true);
+    //     if (redirect){
+    //         return <Redirect to="/" ></Redirect>
+    //     };
+    //     setLoading(false);
+    // };
+
+    async function handleFormSubmit(event) {
+        event.preventDefault();
+    
+        try {
+            const userId = jwt.user._id;
+            const token = jwt.token;
+            const postData = new FormData();
+    
+            if (post.body) {
+                postData.append("body", post.body);
+            }
+    
+            for (let i = 0; i < post.file.length; i++) {
+                if (post.file[i]) {
+                    postData.append("file", post.file[i]);
+                }
+            }
+    
+            setLoading(true);
+            await dispatch(addPost(token, userId, postData));
+            setPost({ ...post, body: "", file: [] });
+            setRedirect(true);
+            if (redirect) {
+                history.push('/');
+            }
+        } catch (error) {
+            console.error("Error while submitting form:", error);
+        } finally {
+            setLoading(false);
+        }
+    }
+    
 
     return (
         <div className="addpost_container">

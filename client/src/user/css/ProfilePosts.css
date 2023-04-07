@@ -16,7 +16,7 @@
     border: 1px solid #7c7c7d;
     border-radius: 10px;
     color: black;
-    height: 580px;
+    height: 680px;
     margin: 15px;
 }
 
@@ -26,8 +26,8 @@
     align-items: center;
     flex-direction: row;
     margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .user_profile_box_profile h5{
@@ -72,13 +72,15 @@
     display: flex;
     align-content: center;
     justify-content: center;
+    margin-top: 4%;
 }
 
 .post_box_info_profile{
     display: flex;
-    justify-content: space-between;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
     height: 130px;
-    padding: 10px 0;
     margin-left: 25px;
 
 }
@@ -86,6 +88,8 @@
 .post_box_info_profile p {
     margin-bottom: 10px;
     margin-top: 10px;
+    font-size: 16px;
+    margin-left: 0;
 }
 
 
@@ -95,10 +99,6 @@
     margin-top: 20px;
 }
 
-.post_box_info_profile h5{
-    font-size: 16px;
-
-}
 
 .date_profile{
     margin-top: -20px;
@@ -110,17 +110,6 @@
     font-weight: bold;
 
 }
-
-
-
-/* .post_box_profile .slider_profile{
-    position: relative;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: -120px 0;
-} */
 
 
 
