@@ -131,31 +131,31 @@ function Post({ post }) {
             <div className="bottom_box">    
                 <div className="comments_box">
                     <FontAwesomeIcon className="comment_icon" icon={faComment} size = '1x'></FontAwesomeIcon>
-                    <div className="comments_link"><h5 className="mr-2">{post && post.comments.length}</h5></div>
+                    <div className="comments_link"><p className="mr-2">{post && post.comments.length}</p></div>
                 </div>
 
                 <div className="likes_box">
                     {
                         like ? ( 
-                        <h5 className="mr-2">
-                        <span className="badge">
-                            {" "}
-                            {likes? likes.length: 0}{" "}
-                        </span>
-                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={handleUnlike} 
-                        className="fa-heart">
-                        </FontAwesomeIcon>
-                        </h5>
+                        <div className="mr-2">
+                            <span className="badge">
+                                {" "}
+                                {likes? likes.length: 0}{" "}
+                            </span>
+                            <FontAwesomeIcon icon={faHeart} size = '1x' onClick={handleUnlike} 
+                            className="fa-heart">
+                            </FontAwesomeIcon>
+                        </div>
                     ) : (
-                        <h5 className="mr-2">
-                        <span className="badge">
-                            {" "}
-                            {likes? likes.length: 0}{" "}
-                        </span>
-                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={handleLike}
-                        className="fa-heart" >
-                        </FontAwesomeIcon>
-                        </h5>
+                        <div className="mr-2">
+                            <span className="badge">
+                                {" "}
+                                {likes? likes.length: 0}{" "}
+                            </span>
+                            <FontAwesomeIcon icon={faHeart} size = '1x' onClick={handleLike}
+                            className="fa-heart" >
+                            </FontAwesomeIcon>
+                        </div>
                     )
                     }   
                 </div>

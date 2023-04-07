@@ -40,9 +40,9 @@ function Comment({ comment, postId, onCommentDelete}) {
                     ></img>)
                     }
                     
-                    <h5 className="name_comment">
+                    <p className="name_comment">
                         {comment.postedBy.name}
-                    </h5>
+                    </p>
 
                     <div className="card_text_comment">
                        {comment.text}

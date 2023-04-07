@@ -86,14 +86,14 @@ function SinglePost({ post }) {
                         alt= { post && post.postedBy.name }
                         ></img>
 
-                        <h5 className="text-dark font-weight-bold">
+                        <p className="text-dark font-weight-bold">
                             {post && post.brand}
-                        </h5>
-                        <h5 className="text-dark font-weight-bold">
+                        </p>
+                        <p className="text-dark font-weight-bold">
                             {post && post.productName}
-                        </h5>
+                        </p>
                         <h7 className="text-dark font-weight">
-                          {post && post.postedBy.name || jwt.user.name}
+                            {post && post.postedBy.name || jwt.user.name}
                         </h7>
                         <hr></hr>
                         <h10 className="text font-weight-bold">
@@ -114,34 +114,34 @@ function SinglePost({ post }) {
                         <div className="d-flex flex-row justify-content-center align-items-center">
                             {
                                 post && post.like ? ( 
-                                <h5 className="mr-2">
-                                <span className="badge badge-danger p-2 mr-2">
-                                    {" "}
-                                    {post && post.likes? likes.length: 0}{" "}
-                                </span>
-                                <i onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
-                                className="fa fa-heart text-danger mr-2">
-                                </i>
-                                </h5>
+                                <div className="mr-2">
+                                    <span className="badge badge-danger p-2 mr-2">
+                                        {" "}
+                                        {post && post.likes? likes.length: 0}{" "}
+                                    </span>
+                                    <i onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
+                                    className="fa fa-heart text-danger mr-2">
+                                    </i>
+                                </div>
                             ) : (
-                                <h5 className="mr-2">
-                                <span className="badge p-2 mr-2">
-                                    {" "}
-                                    {post && post.likes? post.likes.length: 0}{" "}
-                                </span>
-                                <i onClick={()=> dispatch(likeposttwo(userId, token, postId))}
-                                className="fa fa-heart text-danger mr-2">
-                                </i>
-                                </h5>
+                                <div className="mr-2">
+                                    <span className="badge p-2 mr-2">
+                                        {" "}
+                                        {post && post.likes? post.likes.length: 0}{" "}
+                                    </span>
+                                    <i onClick={()=> dispatch(likeposttwo(userId, token, postId))}
+                                    className="fa fa-heart text-danger mr-2">
+                                    </i>
+                                </div>
                             )
                             }
 
-                            <h5 className="mr-2">
+                            <p className="mr-2">
                                 <span className="badge badge-primary p-2 mr-2">
                                     {" "}
                                     {post && post.comments ? comments.length: 0}{" "}
                                 </span>
-                            </h5>
+                            </p>
                             <i className="fa fa-comment text-primary"></i>
                         </div>
                     </div>

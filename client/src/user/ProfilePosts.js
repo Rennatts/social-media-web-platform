@@ -77,7 +77,7 @@ function ProfilePosts({ post }) {
                     alt= {post.postedBy.name}
                     onError= {i => (i.target.src= `${DefaultProfile}`)}
                 ></img> 
-                <h5>{post.postedBy.name}</h5>
+                <p>{post.postedBy.name}</p>
                 <p>Followers {post.postedBy.followers.length === 0 ? 0 : post.postedBy.followers.length}</p>
             </div>
 
@@ -95,31 +95,31 @@ function ProfilePosts({ post }) {
             <div className="bottom_box">  
                 <div className="comments_box_profile">
                     <FontAwesomeIcon className="comment_icon_profile" icon={faComment} size = '1x'></FontAwesomeIcon>
-                    <h5 className="mr-2_profile">{post.comments.length}</h5>
+                    <p className="mr-2_profile">{post.comments.length}</p>
                 </div>
 
                 <div className="likes_box_profile">
                     {
                         like ? ( 
-                        <h5 className="mr-2_profile">
-                        <span className="badge_profile">
-                            {" "}
-                            {likes? likes.length: 0}{" "}
-                        </span>
-                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
-                        className="fa-heart_profile">
-                        </FontAwesomeIcon>
-                        </h5>
+                        <div className="mr-2_profile">
+                            <span className="badge_profile">
+                                {" "}
+                                {likes? likes.length: 0}{" "}
+                            </span>
+                            <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
+                            className="fa-heart_profile">
+                            </FontAwesomeIcon>
+                        </div>
                     ) : (
-                        <h5 className="mr-2_profile">
-                        <span className="badge_profile">
-                            {" "}
-                            {likes? likes.length: 0}{" "}
-                        </span>
-                        <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(likeposttwo(userId, token, postId))}
-                        className="fa-heart_profile" >
-                        </FontAwesomeIcon>
-                        </h5>
+                        <div className="mr-2_profile">
+                            <span className="badge_profile">
+                                {" "}
+                                {likes? likes.length: 0}{" "}
+                            </span>
+                            <FontAwesomeIcon icon={faHeart} size = '1x' onClick={()=> dispatch(likeposttwo(userId, token, postId))}
+                            className="fa-heart_profile" >
+                            </FontAwesomeIcon>
+                        </div>
                     )
                     }   
                 </div>

@@ -68,7 +68,7 @@ function RankingPost({ post }) {
                 alt={post && post.postedBy.name}
                 onError= {i => (i.target.src= `${DefaultProfile}`)}
                 ></img>
-                <h5>{post && post.postedBy.name}</h5>
+                <p>{post && post.postedBy.name}</p>
                 <p>Followers {post && post.postedBy.followers.length}</p>
 
             </div>
@@ -86,32 +86,34 @@ function RankingPost({ post }) {
 
             <div className="bottom_box_ranking">    
                 <div className="comments_box_ranking">
-                  <FontAwesomeIcon onClick={()=> history.push("/comments")} className="comment_icon_ranking" icon={faComment}></FontAwesomeIcon>
-                  <Link className="comments_link_ranking"><h5 className="comments_count_ranking">{post && post.comments.length}</h5></Link>
+                    <FontAwesomeIcon onClick={()=> history.push("/comments")} className="comment_icon_ranking" icon={faComment}></FontAwesomeIcon>
+                    <div className="comments_link_ranking">
+                        <p className="comments_count_ranking">{post && post.comments.length}</p>
+                    </div>
                 </div>
 
                 <div className="likes_box_ranking">
                     {
                         like ? ( 
-                        <h5 className="mr-2_ranking">
-                        <span className="badge_ranking">
-                            {" "}
-                            {likes? likes.length: 0}{" "}
-                        </span>
-                        <FontAwesomeIcon icon={faHeart} onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
-                        className="fa-heart_ranking">
-                        </FontAwesomeIcon>
-                        </h5>
+                        <div className="mr-2_ranking">
+                            <span className="badge_ranking">
+                                {" "}
+                                {likes? likes.length: 0}{" "}
+                            </span>
+                            <FontAwesomeIcon icon={faHeart} onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
+                            className="fa-heart_ranking">
+                            </FontAwesomeIcon>
+                        </div>
                     ) : (
-                        <h5 className="mr-2_ranking">
-                        <span className="badge_ranking">
-                            {" "}
-                            {likes? likes.length: 0}{" "}
-                        </span>
-                        <FontAwesomeIcon icon={faHeart} onClick={()=> dispatch(likeposttwo(userId, token, postId))}
-                        className="fa-heart_ranking">
-                        </FontAwesomeIcon>
-                        </h5>
+                        <div className="mr-2_ranking">
+                            <span className="badge_ranking">
+                                {" "}
+                                {likes? likes.length: 0}{" "}
+                            </span>
+                            <FontAwesomeIcon icon={faHeart} onClick={()=> dispatch(likeposttwo(userId, token, postId))}
+                            className="fa-heart_ranking">
+                            </FontAwesomeIcon>
+                        </div>
                     )
                     }   
                 </div>

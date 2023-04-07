@@ -39,12 +39,12 @@ function PostUser({post}) {
             <div className="card-header bg-light">
                 <div className="d-flex flex-row justify-content-start">
                     <div className="post-by">
-                        <h5 className="text-dark font-weight-bold">
+                        <p className="text-dark font-weight-bold">
                             {post.brand}
-                        </h5>
-                        <h5 className="text-dark font-weight-bold">
+                        </p>
+                        <p className="text-dark font-weight-bold">
                             {post.productName}
-                        </h5>
+                        </p>
                         <img>{post.photo}</img>
                         <h7 className="text-dark font-weight">
                           {post.postedBy.name || jwt.user.name}
@@ -68,25 +68,25 @@ function PostUser({post}) {
                     <div className="d-flex flex-row justify-content-center align-items-center">
                         {
                             like ? ( 
-                            <h5 className="mr-2">
-                            <span className="badge badge-danger p-2 mr-2">
-                                {" "}
-                                {likes? likes.length: 0}{" "}
-                            </span>
-                            <i onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
-                            className="fa fa-heart text-danger mr-2">
-                            </i>
-                            </h5>
+                            <div className="mr-2">
+                                <span className="badge badge-danger p-2 mr-2">
+                                    {" "}
+                                    {likes? likes.length: 0}{" "}
+                                </span>
+                                <i onClick={()=> dispatch(unlikeposttwo(userId, token, postId))}
+                                className="fa fa-heart text-danger mr-2">
+                                </i>
+                            </div>
                         ) : (
-                            <h5 className="mr-2">
-                            <span className="badge badge-danger p-2 mr-2">
-                                {" "}
-                                {likes? likes.length: 0}{" "}
-                            </span>
-                            <i onClick={()=> dispatch(likeposttwo(userId, token, postId))}
-                            className="fa fa-heart text-danger mr-2">
-                            </i>
-                            </h5>
+                            <div className="mr-2">
+                                <span className="badge badge-danger p-2 mr-2">
+                                    {" "}
+                                    {likes? likes.length: 0}{" "}
+                                </span>
+                                <i onClick={()=> dispatch(likeposttwo(userId, token, postId))}
+                                className="fa fa-heart text-danger mr-2">
+                                </i>
+                            </div>
 
                         )
                         }

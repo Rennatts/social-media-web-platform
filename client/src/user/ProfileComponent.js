@@ -43,7 +43,7 @@ function ProfileComponent({ profile, userPosts, userSuccess, userError }) {
                 src={profile.url}
                 alt= {profile.name}
             ></img>
-            <h5 className="profilename">{profile.name}</h5>
+            <p className="profilename">{profile.name}</p>
             <h7>posts: {userPosts.length}</h7>
             <h7>Followers: {profile.followers.length}</h7>
             </Link>

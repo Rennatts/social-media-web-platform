@@ -21,25 +21,25 @@ function LikeComponenet({ likes }) {
         <div>
             {
                 existinglike ? ( 
-                    <h5 className="mr-2">
-                    <span className="badge badge-danger p-2 mr-2">
-                        {" "}
-                        {existinglike? likes.length: 0}{" "}
-                    </span>
-                    <i onClick={()=> dispatch(removeLikeToBranduser(userId, branduserId))}
-                    className="fa fa-heart text-danger mr-2">
-                    </i>
-                    </h5>
+                    <div className="mr-2">
+                        <span className="badge badge-danger p-2 mr-2">
+                            {" "}
+                            {existinglike? likes.length: 0}{" "}
+                        </span>
+                        <i onClick={()=> dispatch(removeLikeToBranduser(userId, branduserId))}
+                        className="fa fa-heart text-danger mr-2">
+                        </i>
+                    </div>
                 ) : (
-                    <h5 className="mr-2">
-                    <span className="badge p-2 mr-2">
-                        {" "}
-                        {existinglike? likes.length: 0}{" "}
-                    </span>
-                    <i onClick={()=> dispatch(addLikeToBranduser(userId, branduserId))}
-                    className="fa fa-heart text-danger mr-2">
-                    </i>
-                    </h5>
+                    <div className="mr-2">
+                        <span className="badge p-2 mr-2">
+                            {" "}
+                            {existinglike? likes.length: 0}{" "}
+                        </span>
+                        <i onClick={()=> dispatch(addLikeToBranduser(userId, branduserId))}
+                        className="fa fa-heart text-danger mr-2">
+                        </i>
+                    </div>
                 )
             }
             
