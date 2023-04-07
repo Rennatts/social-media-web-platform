@@ -20,7 +20,7 @@
     border-radius: 17px;
     color: black;
     width: 400px;
-    height: 460px;
+    height: 500px;
     padding: 40px 0;
     margin-top: 82px;
     margin-left: 22px;
@@ -38,6 +38,7 @@
 
 .body_box_ranking{
     margin-top: 6%;
+    margin-botton: 6%;
     margin-left: 4%;
 }
 
@@ -84,9 +85,10 @@
 
 .bottom_box_ranking{
     display: flex;
+    align-content: center;
     justify-content: center;
-    margin-top: 44px;
-    height: 30px;
+    margin-top: 12%;
+    flex-direction: row;
 }
 
 .comments_box_ranking{
