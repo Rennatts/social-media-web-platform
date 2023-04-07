@@ -434,7 +434,7 @@ return (dispatch) => {
     axios
     .get("http://localhost:5050/posts/post/the_most_commented", config)
     .then((res) => {
-        console.log(res);
+        console.log("--res--", res);
         dispatch({
             type: MOST_COMMENTED_POSTS,
             payload: res.data

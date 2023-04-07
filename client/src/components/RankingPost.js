@@ -69,7 +69,7 @@ function RankingPost({ post }) {
                 onError= {i => (i.target.src= `${DefaultProfile}`)}
                 ></img>
                 <h5>{post && post.postedBy.name}</h5>
-                <h8>Followers {post && post.postedBy.followers.length}</h8>
+                <p>Followers {post && post.postedBy.followers.length}</p>
 
             </div>
             

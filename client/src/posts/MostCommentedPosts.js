@@ -19,6 +19,8 @@ function MostCommentedPosts({onChange, dataFromSearch, posts}) {
         getMostLiked();
     },[dispatch]);
 
+    console.log("---", posts)
+
     return (
         <div>
             <div className="most_liked_header">

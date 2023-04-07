@@ -78,7 +78,7 @@ function ProfilePosts({ post }) {
                     onError= {i => (i.target.src= `${DefaultProfile}`)}
                 ></img> 
                 <h5>{post.postedBy.name}</h5>
-                <h8>Followers {post.postedBy.followers.length === 0 ? 0 : post.postedBy.followers.length}</h8>
+                <p>Followers {post.postedBy.followers.length === 0 ? 0 : post.postedBy.followers.length}</p>
             </div>
 
             <div className="post_box_info_profile">
