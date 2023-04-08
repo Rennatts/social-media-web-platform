@@ -13,6 +13,9 @@ The project is a social media platform that uses the following technologies:
 - AWS S3 to save multiple images
 - Redux to handle state management
 
+## Preview
+![Alt Text](./client/src/images/social_media.gif)
+
 ## Installation
 To install the node modules in the back-end and front-end, follow these steps:
 

@@ -17,18 +17,13 @@ function ProfilePosts({ post }) {
     const [like, setLike] = useState(false);
     const [comments, setComments] = useState([]);
     const [comment, setComment] = useState(false);
-    const[currentImage, setCurrentImage] = useState(0);
-    const [length, setLength] = useState();
 
-
-    const date = new Date(post.created);
     const jwt = isLogged();
     const dispatch =  useDispatch();
 
     const postId = post._id;
     const token = jwt.token;
     const userId = jwt.user._id;
-
 
     
     useEffect(() => {
@@ -62,8 +57,6 @@ function ProfilePosts({ post }) {
             dispatch(deletePost(jwt.token, post._id));
         }
     }
-
-    console.log(post);
 
 
     return (
