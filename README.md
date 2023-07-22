@@ -5,6 +5,9 @@ This is my first full-stack project which I started in fall 2020 after months of
 
 
 ## Project Description
+Users can create profiles and securely log in and log out using JWT authentication. They can follow and unfollow other users, like and dislike posts, and comment on posts. Users can also update their profiles, create posts with multiple images (stored on AWS S3), and access rankings of the most liked and most commented posts. Additional features include a feed displaying posts from followed users, the ability to discover new users, and a keyword-based post search functionality.
+
+
 The project is a social media platform that uses the following technologies:
 
 - Node.js and Express in the back-end
