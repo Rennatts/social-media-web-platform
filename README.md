@@ -14,7 +14,8 @@ The project is a social media platform that uses the following technologies:
 - Redux to handle state management
 
 ## Preview
-![Alt Text](./client/src/images/social_media.gif)
+![Alt Text](https://www.youtube.com/watch?v=pNZh3jZ-E-A)
+
 
 ## Installation
 To install the node modules in the back-end and front-end, follow these steps:

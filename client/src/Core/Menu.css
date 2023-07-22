@@ -144,4 +144,14 @@
     color: "#a4f5e5";
 }
 
+.nav_link_active .icon {
+    color: black;
+}
+
+.nav_link_active:active .icon,
+.nav_link_active:focus .icon {
+    color: #314191;
+}
+
+
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, withRouter, useHistory } from 'react-router-dom';
 import { isAuthenticated, signout, brandSignout  } from './../auth/index';
+import { faHome, faThList, faHeart, faComment, faUsers, faPlusSquare, faSquare, faLifeRing, faArrowUpRightDots, faAdd, faHeartCircleBolt, faHeartPulse, faHeartbeat, faGrinHearts, faHeartCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Menu.css';
 
@@ -50,19 +51,20 @@ const Menu = ({ currentUser }) => {
                     }}
                     className="nav_link_active" 
                     >
-                        <i className="fas fa-home"></i>
+                        <FontAwesomeIcon icon={faHome} />
                     </NavLink>
 
                     <NavLink
-                    exact to={`/posts/feed/${isAuthenticated().user._id}`}
-                    activeStyle={{
-                        fontWeight: "bold",
-                        color: "#314191",
-                    }}
-                    className="nav_link_active" 
-                    >
-                        <i className="fas fa-sliders"></i>
+                        exact to={`/posts/feed/${isAuthenticated().user._id}`}
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "#314191",
+                        }}
+                        className="nav_link_active" 
+                        >
+                        <FontAwesomeIcon icon={faThList} />
                     </NavLink>
+
 
                     <NavLink
                     exact to={"/trading/most_liked"}
@@ -70,9 +72,10 @@ const Menu = ({ currentUser }) => {
                         fontWeight: "bold",
                         color: "#314191",
                     }}
-                    className="nav_link_active" 
+                    className="nav_link_active"
+                    style={{color:"black"}} 
                     >
-                        <i style={{color: "black"}}className="fas fa-heart"></i>
+                        <FontAwesomeIcon icon={faHeartCirclePlus} />
                     </NavLink>
 
                     <NavLink
@@ -83,7 +86,7 @@ const Menu = ({ currentUser }) => {
                     }}
                     className="nav_link_active" 
                     >
-                        <i style={{color: "black"}} className="fas fa-comment"></i>
+                        <FontAwesomeIcon icon={faComment} />
                     </NavLink>
 
                     <NavLink 
@@ -93,7 +96,8 @@ const Menu = ({ currentUser }) => {
                             color: "#314191"
                         }}
                         className="nav_link_active" 
-                        href="#"><i className="fas fa-users"></i>
+                        href="#">
+                        <FontAwesomeIcon icon={faUsers} />
                     </NavLink>
                 </div>
 
@@ -104,7 +108,8 @@ const Menu = ({ currentUser }) => {
                             fontWeight: "bold",
                             color: "#314191"
                         }}
-                        href="#"><i className="far fa-plus-square"></i>
+                        href="#">
+                        <FontAwesomeIcon icon={faAdd} />
                     </NavLink> 
 
                     <NavLink exact to={`/user/${isAuthenticated().user._id}`}  
